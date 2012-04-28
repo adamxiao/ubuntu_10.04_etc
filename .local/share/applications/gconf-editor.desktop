@@ -1,0 +1,15 @@
+[Desktop Entry]
+Categories=GNOME;GTK;System;
+Comment=Directly edit your entire configuration database
+Exec=gconf-editor
+Icon=gconf-editor
+Name=Configuration Editor
+NoDisplay=false
+StartupNotify=true
+Terminal=false
+Type=Application
+X-GNOME-Bugzilla-Bugzilla=GNOME
+X-GNOME-Bugzilla-Component=general
+X-GNOME-Bugzilla-Product=gconf-editor
+X-GNOME-Bugzilla-Version=2.30.0
+X-Ubuntu-Gettext-Domain=gconf-editor

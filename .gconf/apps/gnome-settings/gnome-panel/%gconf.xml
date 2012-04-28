@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="history-gnome-run" mtime="1335620048" type="list" ltype="string">
+		<li type="string">
+			<stringvalue>/var/</stringvalue>
+		</li>
+		<li type="string">
+			<stringvalue>/var/cache/</stringvalue>
+		</li>
+		<li type="string">
+			<stringvalue>.mozilla</stringvalue>
+		</li>
+		<li type="string">
+			<stringvalue>/</stringvalue>
+		</li>
+		<li type="string">
+			<stringvalue>Public/</stringvalue>
+		</li>
+		<li type="string">
+			<stringvalue>.local</stringvalue>
+		</li>
+		<li type="string">
+			<stringvalue>tmp/</stringvalue>
+		</li>
+		<li type="string">
+			<stringvalue>Downloads/</stringvalue>
+		</li>
+		<li type="string">
+			<stringvalue>.</stringvalue>
+		</li>
+	</entry>
+</gconf>

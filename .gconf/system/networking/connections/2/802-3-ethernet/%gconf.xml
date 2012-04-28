@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="duplex" mtime="1335626810" type="string">
+		<stringvalue>full</stringvalue>
+	</entry>
+	<entry name="name" mtime="1335626810" type="string">
+		<stringvalue>802-3-ethernet</stringvalue>
+	</entry>
+</gconf>

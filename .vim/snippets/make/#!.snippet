@@ -1,0 +1,18 @@
+all: ${1:main}
+
+$1: $1.o
+
+clean:
+	-rm *.o
+
+.PHONY: clean all
+
+SOURCE = $1.c
+
+include $(SOURCE:.c=.d)
+
+%.d: %.c
+	set -e; rm -f $@; \
+	$(CC) -MM $(CPPFLAGS) $< > $@.$$$$; \
+	sed 's,\($*\)\.o[ :]*,\1.o $@ : ,g' < $@.$$$$ > $@; \
+	rm -f $@.$$$$

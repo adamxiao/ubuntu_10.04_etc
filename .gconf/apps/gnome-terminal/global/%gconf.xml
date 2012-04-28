@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="active_encodings" mtime="1334241853" type="list" ltype="string">
+		<li type="string">
+			<stringvalue>UTF-8</stringvalue>
+		</li>
+		<li type="string">
+			<stringvalue>GB18030</stringvalue>
+		</li>
+	</entry>
+	<entry name="default_profile" mtime="1334241697" type="string">
+		<stringvalue>Default</stringvalue>
+	</entry>
+	<entry name="profile_list" mtime="1334241697" type="list" ltype="string">
+		<li type="string">
+			<stringvalue>Default</stringvalue>
+		</li>
+		<li type="string">
+			<stringvalue>Profile0</stringvalue>
+		</li>
+	</entry>
+</gconf>

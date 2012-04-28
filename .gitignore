@@ -1,0 +1,27 @@
+# Ignore everything in this directory
+/*
+# Ignore special backup file
+*~
+*-
+# Except this file
+!.gitignore
+!.bash_aliases
+!.bash_logout
+!.bashrc
+!.config/
+!.dmrc
+!.gconf/
+!.gconfd/
+!.gitconfig
+!.gnome2/
+!.gtk-bookmarks
+!.gvimrc
+!.keysnail.js
+!.local/
+!.profile
+!.subversion/
+!.vim/
+!.vimrc
+
+#.dmrc => Gnome per user language encoding configuration using .dmrc file
+#.mozilla need git control ???

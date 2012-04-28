@@ -1,0 +1,11 @@
+
+[Desktop Entry]
+Type=Application
+Exec=dropbox
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en]=adam_dropbox
+Name=adam_dropbox
+Comment[en]=dropbox
+Comment=dropbox

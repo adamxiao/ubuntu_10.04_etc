@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="run_command_terminal" mtime="1333978657" type="string">
+		<stringvalue>&lt;Control&gt;&lt;Alt&gt;t</stringvalue>
+	</entry>
+	<entry name="run_command_1" mtime="1333978664" type="string">
+		<stringvalue>&lt;Control&gt;&lt;Alt&gt;f</stringvalue>
+	</entry>
+</gconf>

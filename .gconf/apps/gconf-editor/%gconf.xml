@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="recents" mtime="1334382702" type="list" ltype="string">
+		<li type="string">
+			<stringvalue>/apps/gedit-2/preferences/encodings/auto_detected</stringvalue>
+		</li>
+		<li type="string">
+			<stringvalue>/apps/metacity/keybinding_commands/command_1</stringvalue>
+		</li>
+		<li type="string">
+			<stringvalue>/apps/metacity/global_keybindings/run_command_terminal</stringvalue>
+		</li>
+		<li type="string">
+			<stringvalue>/apps/metacity/global_keybindings/run_command_1</stringvalue>
+		</li>
+	</entry>
+</gconf>

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="last_save_directory" mtime="1334327023" type="string">
+		<stringvalue>file:///home/adam/Desktop</stringvalue>
+	</entry>
+	<entry name="border_effect" mtime="1334327020" type="string">
+		<stringvalue>none</stringvalue>
+	</entry>
+	<entry name="delay" mtime="1334327020" type="int" value="0"/>
+	<entry name="include_pointer" mtime="1334327020" type="bool" value="true"/>
+	<entry name="include_border" mtime="1334327020" type="bool" value="true"/>
+</gconf>

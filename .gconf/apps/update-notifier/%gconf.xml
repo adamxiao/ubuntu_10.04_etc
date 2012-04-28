@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="no_show_notifications" mtime="1335615797" type="bool" value="false"/>
+</gconf>

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="activity_sensitive" mtime="1334241633" type="bool" value="true"/>
+	<entry name="monitor" mtime="1333984269" type="string">
+		<stringvalue></stringvalue>
+	</entry>
+	<entry name="snooze" mtime="1334241633" type="int" value="180"/>
+	<entry name="reset_pred" mtime="1333984269" type="string">
+		<stringvalue></stringvalue>
+	</entry>
+	<entry name="auto_reset" mtime="1334241635" type="int" value="600"/>
+	<entry name="limit" mtime="1334241635" type="int" value="3600"/>
+</gconf>

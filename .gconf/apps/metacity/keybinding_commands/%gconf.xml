@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="command_1" mtime="1334328112" type="string">
+		<stringvalue>firefox -no-remote -P default</stringvalue>
+	</entry>
+</gconf>

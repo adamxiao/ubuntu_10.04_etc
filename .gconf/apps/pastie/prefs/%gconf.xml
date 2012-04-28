@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="sel_dialog_key" mtime="1335193175" type="string">
+		<stringvalue>&lt;Shift&gt;&lt;Alt&gt;C</stringvalue>
+	</entry>
+</gconf>

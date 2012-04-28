@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="head" mtime="1334241632" type="int" value="0"/>
+	<entry name="y" mtime="1334241632" type="int" value="256"/>
+	<entry name="x" mtime="1334241632" type="int" value="256"/>
+	<entry name="cycle_time" mtime="1334241634" type="int" value="10"/>
+	<entry name="enabled" mtime="1334241648" type="bool" value="false"/>
+</gconf>

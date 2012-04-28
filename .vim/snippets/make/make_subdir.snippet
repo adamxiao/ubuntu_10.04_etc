@@ -1,0 +1,36 @@
+# recursive cd sub dirirectory make target
+# TODO : define loop sub dir
+SUBDIRS= 
+
+#SUBDIRS_all = $(foreach d,$(SUBDIRS),$(d)_all)
+SUBDIRS_clean = $(foreach d,$(SUBDIRS),$(d)_clean)
+SUBDIRS_install = $(foreach d,$(SUBDIRS),$(d)_install)
+
+# Rules for producing the subdirs
+#----------------------------------------------
+# reference makefile within mysql
+all : $(SUBDIRS)
+
+clean : $(SUBDIRS_clean)
+
+install : $(SUBDIRS_install)
+
+rebuild : clean all
+
+
+$(SUBDIRS) :
+	@$(MAKE) -C $@ all
+
+$(SUBDIRS_clean) :
+	@$(MAKE) -C $(subst _clean,,$@) clean
+
+$(SUBDIRS_install) :
+	@$(MAKE) -C $(subst _install,,$@) install
+
+# Module dependence define
+#----------------------------------------------
+# TODO : define module dependence
+
+
+.PHONY : $(SUBDIRS) $(SUBDIRS_clean) $(SUBDIRS_install) \
+	all clean install rebuild

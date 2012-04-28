@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="alarm_limit" mtime="1335619013" schema="/schemas/apps/computertemp/alarm_limit" type="int" value="80"/>
+	<entry name="timeout_log" mtime="1335619013" schema="/schemas/apps/computertemp/timeout_log" type="int" value="5"/>
+	<entry name="visualization_mode" mtime="1335619013" schema="/schemas/apps/computertemp/visualization_mode" type="int" value="0"/>
+	<entry name="max_temp" mtime="1335619013" schema="/schemas/apps/computertemp/max_temp" type="int" value="80"/>
+	<entry name="debug" mtime="1335619013" schema="/schemas/apps/computertemp/debug" type="bool" value="false"/>
+	<entry name="sensor" mtime="1335619013" schema="/schemas/apps/computertemp/sensor" type="int" value="0"/>
+	<entry name="alarm_enabled" mtime="1335619013" schema="/schemas/apps/computertemp/alarm_enabled" type="bool" value="false"/>
+	<entry name="min_temp" mtime="1335619013" schema="/schemas/apps/computertemp/min_temp" type="int" value="40"/>
+	<entry name="thermal_zone" mtime="1335619013" schema="/schemas/apps/computertemp/thermal_zone" type="int" value="0"/>
+	<entry name="timeout" mtime="1335619013" schema="/schemas/apps/computertemp/timeout" type="int" value="5"/>
+	<entry name="alarm_when" mtime="1335619013" schema="/schemas/apps/computertemp/alarm_when" type="int" value="1"/>
+	<entry name="alarm_repeat" mtime="1335619013" schema="/schemas/apps/computertemp/alarm_repeat" type="bool" value="false"/>
+	<entry name="log_filename" mtime="1335619013" schema="/schemas/apps/computertemp/log_filename" type="string">
+		<stringvalue>{home}/logs/{sensor}_{date}.log</stringvalue>
+	</entry>
+	<entry name="logging" mtime="1335619013" schema="/schemas/apps/computertemp/logging" type="bool" value="false"/>
+	<entry name="log_info" mtime="1335619013" schema="/schemas/apps/computertemp/log_info" type="string">
+		<stringvalue>{date} {time}#{sensor}#{zone}#{temp}</stringvalue>
+	</entry>
+	<entry name="alarm_command" mtime="1335619013" schema="/schemas/apps/computertemp/alarm_command" type="string">
+		<stringvalue></stringvalue>
+	</entry>
+	<entry name="visualization_units" mtime="1335619013" schema="/schemas/apps/computertemp/visualization_units" type="int" value="0"/>
+	<entry name="autologname" mtime="1335619013" schema="/schemas/apps/computertemp/autologname" type="bool" value="true"/>
+</gconf>

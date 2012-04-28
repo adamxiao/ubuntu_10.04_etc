@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="exercise_step" mtime="1333984269" type="string">
+		<stringvalue>/usr/share/sounds/workrave/default/exercise-step.wav</stringvalue>
+	</entry>
+	<entry name="exercise_step_enabled" mtime="1333984269" type="bool" value="true"/>
+	<entry name="exercises_ended" mtime="1333984269" type="string">
+		<stringvalue>/usr/share/sounds/workrave/default/exercises-ended.wav</stringvalue>
+	</entry>
+	<entry name="exercises_ended_enabled" mtime="1333984269" type="bool" value="true"/>
+	<entry name="exercise_ended" mtime="1333984269" type="string">
+		<stringvalue>/usr/share/sounds/workrave/default/exercise-ended.wav</stringvalue>
+	</entry>
+	<entry name="exercise_ended_enabled" mtime="1333984269" type="bool" value="true"/>
+	<entry name="daily_limit" mtime="1333984269" type="string">
+		<stringvalue>/usr/share/sounds/workrave/default/daily-limit.wav</stringvalue>
+	</entry>
+	<entry name="daily_limit_enabled" mtime="1333984269" type="bool" value="true"/>
+	<entry name="micro_break_ended" mtime="1333984269" type="string">
+		<stringvalue>/usr/share/sounds/workrave/default/micro-break-ended.wav</stringvalue>
+	</entry>
+	<entry name="micro_break_ended_enabled" mtime="1333984269" type="bool" value="true"/>
+	<entry name="micro_break_started" mtime="1333984269" type="string">
+		<stringvalue>/usr/share/sounds/workrave/default/micro-break-started.wav</stringvalue>
+	</entry>
+	<entry name="micro_break_started_enabled" mtime="1333984269" type="bool" value="true"/>
+	<entry name="rest_break_ended" mtime="1333984269" type="string">
+		<stringvalue>/usr/share/sounds/workrave/default/rest-break-ended.wav</stringvalue>
+	</entry>
+	<entry name="rest_break_ended_enabled" mtime="1333984269" type="bool" value="true"/>
+	<entry name="rest_break_started" mtime="1333984269" type="string">
+		<stringvalue>/usr/share/sounds/workrave/default/rest-break-started.wav</stringvalue>
+	</entry>
+	<entry name="rest_break_started_enabled" mtime="1333984269" type="bool" value="true"/>
+	<entry name="break_ignored" mtime="1333984269" type="string">
+		<stringvalue>/usr/share/sounds/workrave/default/break-ignored.wav</stringvalue>
+	</entry>
+	<entry name="break_ignored_enabled" mtime="1333984269" type="bool" value="true"/>
+	<entry name="break_prelude" mtime="1333984269" type="string">
+		<stringvalue>/usr/share/sounds/workrave/default/break-prelude.wav</stringvalue>
+	</entry>
+	<entry name="break_prelude_enabled" mtime="1333984269" type="bool" value="true"/>
+</gconf>

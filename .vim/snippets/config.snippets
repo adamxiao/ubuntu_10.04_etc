@@ -1,0 +1,41 @@
+snippet #!
+	#                                               -*- Autoconf -*-
+	# Process this file with autoconf to produce a configure script.
+
+	AC_PREREQ([2.65])
+	AC_INIT([TODO], [TODO], [iefcuxy@gmail.com])
+	AC_CONFIG_SRCDIR([TODO])
+	AC_CONFIG_HEADERS([config.h])
+
+	AC_CONFIG_AUX_DIR([build-aux])
+	AC_CONFIG_MACRO_DIR([m4])
+
+	AM_INIT_AUTOMAKE([-Wall -Werror foreign])
+
+	# Checks for programs.
+	AC_PROG_LIBTOOL
+	AC_PROG_CXX
+	AC_PROG_CC
+	AC_PROG_INSTALL
+	AC_PROG_CPP
+
+	# Checks for libraries.
+
+	# Checks for header files.
+
+	# Checks for typedefs, structures, and compiler characteristics.
+
+	# Checks for library functions.
+
+	AC_CONFIG_FILES([Makefile])
+	AC_OUTPUT
+snippet init
+	AC_CONFIG_AUX_DIR([build-aux])
+	AC_CONFIG_MACRO_DIR([m4])
+
+	AM_INIT_AUTOMAKE([-Wall -Werror foreign])
+snippet check
+	# This macro is defined in check.m4 and tests if check.h and
+	# libcheck.a are installed in your system. It sets CHECK_CFLAGS and
+	# CHECK_LIBS accordingly.  
+	AM_PATH_CHECK()
