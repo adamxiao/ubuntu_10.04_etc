@@ -1,8 +1,0 @@
-<?xml version="1.0"?>
-<gconf>
-	<entry name="outputs" mtime="1335191740" type="list" ltype="string">
-		<li type="string">
-			<stringvalue>1366x768+0+0</stringvalue>
-		</li>
-	</entry>
-</gconf>

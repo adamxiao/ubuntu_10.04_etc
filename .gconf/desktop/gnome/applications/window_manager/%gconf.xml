@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-<gconf>
-	<entry name="current" mtime="1335619009" type="string">
-		<stringvalue>/usr/bin/compiz</stringvalue>
-	</entry>
-	<entry name="default" mtime="1333977037" type="string">
-		<stringvalue>/usr/bin/compiz</stringvalue>
-	</entry>
-</gconf>

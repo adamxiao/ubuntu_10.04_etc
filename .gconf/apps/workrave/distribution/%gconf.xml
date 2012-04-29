@@ -1,6 +1,0 @@
-<?xml version="1.0"?>
-<gconf>
-	<entry name="reconnect_interval" mtime="1334241634" type="int" value="15"/>
-	<entry name="reconnect_attempts" mtime="1334241634" type="int" value="5"/>
-	<entry name="port" mtime="1334241634" type="int" value="27273"/>
-</gconf>

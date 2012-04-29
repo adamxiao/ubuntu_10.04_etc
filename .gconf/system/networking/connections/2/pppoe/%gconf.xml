@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-<gconf>
-	<entry name="username" mtime="1335626810" type="string">
-		<stringvalue>18676681146</stringvalue>
-	</entry>
-	<entry name="name" mtime="1335626810" type="string">
-		<stringvalue>pppoe</stringvalue>
-	</entry>
-</gconf>

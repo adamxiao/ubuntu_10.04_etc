@@ -1,3 +1,5 @@
 [user]
 	name = Adam Xiao
 	email = iefcuxy@gmail.com
+[alias]
+	st = !git status -s

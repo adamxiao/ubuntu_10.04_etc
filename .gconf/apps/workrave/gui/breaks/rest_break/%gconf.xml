@@ -1,5 +1,0 @@
-<?xml version="1.0"?>
-<gconf>
-	<entry name="exercises" mtime="1334241633" type="int" value="3"/>
-	<entry name="ignorable_break" mtime="1334241633" type="bool" value="true"/>
-</gconf>

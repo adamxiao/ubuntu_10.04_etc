@@ -1,6 +1,0 @@
-<?xml version="1.0"?>
-<gconf>
-	<entry name="show_browser" mtime="1334241594" type="bool" value="true"/>
-	<entry name="download_next_time" mtime="1335626473" type="int" value="1335630073"/>
-	<entry name="paned_position" mtime="1335191288" type="int" value="98"/>
-</gconf>

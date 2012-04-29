@@ -1,7 +1,0 @@
-<?xml version="1.0"?>
-<gconf>
-	<entry name="camera" mtime="1334933498" type="string">
-		<stringvalue>/dev/video0</stringvalue>
-	</entry>
-	<entry name="countdown" mtime="1334933531" type="bool" value="true"/>
-</gconf>

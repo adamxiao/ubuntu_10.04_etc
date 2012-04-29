@@ -1,5 +1,0 @@
-<?xml version="1.0"?>
-<gconf>
-	<entry name="enabled" mtime="1334241633" type="bool" value="true"/>
-	<entry name="max_preludes" mtime="1333984269" type="int" value="3"/>
-</gconf>
