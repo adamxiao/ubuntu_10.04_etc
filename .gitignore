@@ -3,6 +3,7 @@
 # Ignore special backup file
 *~
 *-
+*.log
 # Except this file
 !.gitignore
 !.bash_aliases
