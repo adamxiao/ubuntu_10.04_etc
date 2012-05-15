@@ -1,0 +1,11 @@
+
+[Desktop Entry]
+Type=Application
+Exec=workrave
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en]=adam_workrave
+Name=adam_workrave
+Comment[en]=workrave
+Comment=workrave

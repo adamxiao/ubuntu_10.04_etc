@@ -1,0 +1,11 @@
+
+[Desktop Entry]
+Type=Application
+Exec=sh -c 'sleep 600 && tomboy'
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en]=adam_tomboy
+Name=adam_tomboy
+Comment[en]=tomboy
+Comment=tomboy
