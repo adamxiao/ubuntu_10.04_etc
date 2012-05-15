@@ -43,9 +43,13 @@ key.setViewKey('l', function (ev) {
     key.generateKey(ev.originalTarget, KeyEvent.DOM_VK_RIGHT, true);
 }, 'Scroll right');
 
-key.setViewKey([['C-u'], ['']], function (ev) {
+key.setViewKey('C-u', function (ev) {
     goDoCommand("cmd_scrollPageUp");
 }, 'Scroll page up');
+
+key.setViewKey([[''], ['g', 'T']], function (ev) {
+    getBrowser().mTabContainer.advanceSelectedTab(-1, true);
+}, 'Select previous tab');
 
 key.setViewKey('C-d', function (ev) {
     goDoCommand("cmd_scrollPageDown");
@@ -55,13 +59,9 @@ key.setViewKey(['g', 'g'], function (ev) {
     goDoCommand("cmd_scrollTop");
 }, 'Scroll to the top of the page', true);
 
-key.setViewKey([['g', 't'], ['']], function (ev) {
+key.setViewKey(['g', 't'], function (ev) {
     getBrowser().mTabContainer.advanceSelectedTab(1, true);
 }, 'Select next tab');
-
-key.setViewKey([['g', 'T'], ['']], function (ev) {
-    getBrowser().mTabContainer.advanceSelectedTab(-1, true);
-}, 'Select previous tab');
 
 key.setViewKey(['g', 'u'], function (ev) {
     var uri = getBrowser().currentURI;
@@ -72,7 +72,7 @@ key.setViewKey(['g', 'u'], function (ev) {
     if (!pathList.pop()) {
         pathList.pop();
     }
-    loadURI(uri.prePath + pathList.join("/") + "/");
+    loadURI(uri.prePath + pathList.join("/") + ("/"));
 }, 'Go upper directory');
 
 key.setViewKey(['g', 'U'], function (ev) {
@@ -118,7 +118,7 @@ key.setViewKey(';', function (ev, arg) {
     ext.exec("hok-start-extended-mode", arg);
 }, 'Start extended hint mode', true);
 
-key.setViewKey('d', function (ev) {
+key.setViewKey('', function (ev) {
     BrowserCloseTabOrWindow();
 }, 'Close tab / window');
 
@@ -224,7 +224,7 @@ key.setCaretKey(['g', 'u'], function (ev) {
     if (!pathList.pop()) {
         pathList.pop();
     }
-    loadURI(uri.prePath + pathList.join("/") + "/");
+    loadURI(uri.prePath + pathList.join("/") + ("/"));
 }, 'Go upper directory');
 
 key.setCaretKey(['g', 'U'], function (ev) {
