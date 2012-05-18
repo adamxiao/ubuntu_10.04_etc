@@ -4,7 +4,7 @@ ctags -R -f ~/.vim/systags --c-kinds=+p --c++-kinds=+px --fields=+iaS --extra=+q
 ctags -R -f ~/.vim/systags --c-kinds=+p --c++-kinds=+px --fields=+iaS --extra=+q --languages=c,c++ /usr/include
 
 #建立库tags
-ctags -R -f ~/.vim/libtags --c-kinds=+p --c++-kinds=+px --fields=+iaS --extra=+q --languages=c,c++ /home/crm20/tuxedo11gR1/include /home/crm20/oracle/product/10.2.0/db_1/{precomp/public,rdbms/public,rdbms/demo,plsql/public} /crm20c_background/tools /crm20c_background/dev/mpw.tydic.src/include
+ctags -R -f ~/.vim/libtags --c-kinds=+p --c++-kinds=+px --fields=+iaS --extra=+q --languages=c,c++ $TUXEDO_HOME/include $ORACLE_HOME/{precomp/public,rdbms/public,rdbms/demo,plsql/public} /crm20c_background/tools /crm20c_background/dev/mpw.tydic.src/include
 
 
 #建立项目tags
