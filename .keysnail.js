@@ -12,7 +12,7 @@
 
 key.quitKey              = "undefined";
 key.helpKey              = "undefined";
-key.escapeKey            = "C-v";
+key.escapeKey            = "Not defined";
 key.macroStartKey        = "undefined";
 key.macroEndKey          = "undefined";
 key.universalArgumentKey = "undefined";
@@ -51,10 +51,6 @@ key.setViewKey([[''], ['g', 'T']], function (ev) {
     getBrowser().mTabContainer.advanceSelectedTab(-1, true);
 }, 'Select previous tab');
 
-key.setViewKey('C-d', function (ev) {
-    goDoCommand("cmd_scrollPageDown");
-}, 'Scroll page down');
-
 key.setViewKey(['g', 'g'], function (ev) {
     goDoCommand("cmd_scrollTop");
 }, 'Scroll to the top of the page', true);
@@ -85,6 +81,10 @@ key.setViewKey(['g', 'U'], function (ev) {
         loadURI(root, null, null);
     }
 }, 'Go to the root directory');
+
+key.setViewKey('C-d', function (ev) {
+    goDoCommand("cmd_scrollPageDown");
+}, 'Scroll page down');
 
 key.setViewKey('G', function (ev) {
     goDoCommand("cmd_scrollBottom");
@@ -117,10 +117,6 @@ key.setViewKey('F', function (ev, arg) {
 key.setViewKey(';', function (ev, arg) {
     ext.exec("hok-start-extended-mode", arg);
 }, 'Start extended hint mode', true);
-
-key.setViewKey('', function (ev) {
-    BrowserCloseTabOrWindow();
-}, 'Close tab / window');
 
 key.setViewKey('u', function (ev) {
     undoCloseTab();
