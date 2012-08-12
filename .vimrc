@@ -7,7 +7,8 @@ set langmenu=zh_CN.UTF-8
 set encoding=UTF-8
 set termencoding=UTF-8
 language message zh_CN.UTF-8
-set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
+"set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
+set fileencodings=cp936,ucs-bom,utf-8,gb18030,big5,euc-jp,euc-kr,latin1
 set fileencoding=cp936
 " encoding config
 set tabstop=4
@@ -44,11 +45,12 @@ autocmd FileType python setlocal expandtab shiftwidth=2 tabstop=2 smarttab softt
 au! BufRead,BufNewFile *.json set filetype=json
 au BufRead,BufNewFile *.txt setlocal ft=txt
 au BufRead,BufNewFile 2012_*_*.log setlocal ft=crm_log
-
-
+au BufEnter *.c,*.h,*.cpp,*.hpp,*.cc source ~/.vim/etc/c.vim
+"autocmd FileType c source ~/.vim/etc/c.vim
 
 
 " 1.5. formating options
+"autocmd FileType c,cpp let &l:formatprg='astyle --mode=c --style=k/r -t'
 "autocmd FileType cpp,c let &l:equalprg='astyle --mode=c --style=k/r -t'
 autocmd FileType html let &l:equalprg='xmllint --format --encode UTF-8 --recover - 2>/dev/null'
 ""autocmd FileType html let &l:formatprg='xmllint --format --encode UTF-8 --recover - 2>/dev/null'
@@ -73,12 +75,13 @@ command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
 "  F9 compile, \sf format sql
 
 map <F2> :A<cr>
-map <F3> :WMToggle<cr>
+map <F3> :NERDTreeToggle<cr>
+"map <F3> :WMToggle<cr>
 ""map <F3><F3> :TlistToggle<cr>
 "map <F4> :call Search_Word()<CR>:copen<CR>
-nmap <F4> :vimgrep /\<<C-R>=expand("<cword>")<CR>\>/ **/*.h **/*.cpp
-map <F5> :make<CR>
-"map <F5><F5> :make clean<CR>
+nmap <F4> :vimgrep /\<<C-R>=expand("<cword>")<CR>\>/ **/*.h **/*.c
+nmap <F5> :make<CR>
+nmap <F5><F5> :make clean all<CR>
 autocmd FileType xml nmap <F5> :%!crm_call_xml_svc.py -<CR>
 autocmd FileType xml vmap <F5> !crm_call_xml_svc.py<CR>
 autocmd FileType xml nmap <F5><F5> :%!crm_call_xml_test.py -<CR>
@@ -92,7 +95,8 @@ map <F6><F6> :ccl<CR>
 map <F7> :cn<CR>
 map <F7><F7> :cp<CR>
 "nmap <F8> <ESC>:mksession! ~/.vim/session_adam.vim<CR>
-nmap <F8> <ESC>:source ~/.vim/session_adam.vim<CR>
+"nmap <F8> <ESC>:source ~/.vim/session_adam.vim<CR>
+nmap <F8> <ESC>:TlistToggle<CR>
 map <F12> :call Do_CsTag()<CR>
 map <F12><F2> :call Add_CsTag()<CR>
 " basic key mapping
