@@ -3,6 +3,11 @@
 # adam used only
 alias va='vi'
 alias mk='make 2>&1 | vim -'
+#wns-team related
+alias conn99_1='ssh xiaoyun@192.168.99.1'
+alias conn99_2='ssh xiaoyun@192.168.99.2'
+alias conn95_3='ssh xiaoyun@200.200.95.3'
+
 # crm相关
 alias conn48='ssh crm20c@192.168.167.48'
 alias conn44='ssh bill@134.64.110.44'
