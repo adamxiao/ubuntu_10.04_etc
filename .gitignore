@@ -6,6 +6,10 @@
 # Ignore special log file
 *.log
 .vim/.netrwhist
+# Ignore special files
+/.gtk-bookmarks
+/.subversion/auth/
+/.vim/systags
 # Except this file
 !.gitignore
 !.bash_aliases
@@ -18,7 +22,6 @@
 !.gvimrc
 !.keysnail.js
 !.gitconfig
-!.gtk-bookmarks
 !.dmrc
 
 #!.config/
