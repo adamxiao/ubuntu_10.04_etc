@@ -37,7 +37,7 @@ set display=lastline
 "set noincsearch
 "set nocul
 "set nocuc
-set nu
+"set nonu
 
 
 " 1.1 file type options
@@ -46,6 +46,7 @@ au! BufRead,BufNewFile *.json set filetype=json
 au BufRead,BufNewFile *.txt setlocal ft=txt
 au BufRead,BufNewFile 2012_*_*.log setlocal ft=crm_log
 au BufEnter *.c,*.h,*.cpp,*.hpp,*.cc source ~/.vim/etc/c.vim
+au FileType c,cpp setlocal nu
 "autocmd FileType c source ~/.vim/etc/c.vim
 
 
