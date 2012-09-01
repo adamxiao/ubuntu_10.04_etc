@@ -33,41 +33,21 @@ $%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  */
 $%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 == comment.file-description == start ==
-/*
- * =========================================================================
- *
- *       Filename:  |FILENAME|
- *
- *    Description:  <CURSOR>
- *
- *        Version:  1.0
- *        Created:  |DATE| |TIME|
- *       Revision:  none
- *       Compiler:  gcc
- *
- *         Author:  |AUTHOR| (|AUTHORREF|), |EMAIL|
- *        Company:  |COMPANY|
- *
- * =========================================================================
+/*!
+ * \file |FILENAME|
+ * \brief <CURSOR>
+ * 
+ * \author |AUTHOR| (|AUTHORREF|), |EMAIL|
+ * \date |DATE| |TIME|
  */
 $%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 == comment.file-description-header == start ==
-/*
- * =========================================================================
- *
- *       Filename:  |FILENAME|
- *
- *    Description:  <CURSOR>
- *
- *        Version:  1.0
- *        Created:  |DATE| |TIME|
- *       Revision:  none
- *       Compiler:  gcc
- *
- *         Author:  |AUTHOR| (|AUTHORREF|), |EMAIL|
- *        Company:  |COMPANY|
- *
- * =========================================================================
+/*!
+ * \file |FILENAME|
+ * \brief <CURSOR>
+ * 
+ * \author |AUTHOR| (|AUTHORREF|), |EMAIL|
+ * \date |DATE| |TIME|
  */
 $%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 == comment.file-section-cpp-header-includes  == 

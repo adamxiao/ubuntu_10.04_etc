@@ -7,6 +7,11 @@ alias mk='make 2>&1 | vim -'
 alias conn99_1='ssh xiaoyun@192.168.99.1'
 alias conn99_2='ssh xiaoyun@192.168.99.2'
 alias conn95_3='ssh xiaoyun@200.200.95.3'
+# WAC编译环境
+alias conn95_4='ssh xiaoyun@200.200.95.4 -p 22345'
+# WAC运行环境
+alias conn0_99='ssh root@192.168.0.99' # 比较老的2.6.33
+alias conn0_102='ssh root@192.168.0.102' # 比较新的3.5
 
 # crm相关
 alias conn48='ssh crm20c@192.168.167.48'
