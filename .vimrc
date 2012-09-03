@@ -76,7 +76,6 @@ command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
 
 map <F2> :A<cr>
 map <F3> :NERDTreeToggle<cr>
-"map <F3> :WMToggle<cr>
 ""map <F3><F3> :TlistToggle<cr>
 "map <F4> :call Search_Word()<CR>:copen<CR>
 nmap <F4> :vimgrep /\<<C-R>=expand("<cword>")<CR>\>/ **/*.h **/*.c
@@ -94,9 +93,7 @@ map <F6> :cw<CR>
 map <F6><F6> :ccl<CR>
 map <F7> :cn<CR>
 map <F7><F7> :cp<CR>
-"nmap <F8> <ESC>:mksession! ~/.vim/session_adam.vim<CR>
-"nmap <F8> <ESC>:source ~/.vim/session_adam.vim<CR>
-nmap <F8> <ESC>:TlistToggle<CR>
+nmap <F8> :TlistToggle<CR>
 map <F12> :call Do_CsTag()<CR>
 map <F12><F2> :call Add_CsTag()<CR>
 " basic key mapping
@@ -212,23 +209,6 @@ let Tlist_File_Fold_Auto_Close=1
 " TagList plugin config
 
 
-let g:NERDTree_title = "[NERDTree]"
-function! NERDTree_Start()
-    exec "NERDTree"
-endfunction
-
-function! NERDTree_IsValid()
-    return 1
-endfunction
-
-let NERDTreeWinSize=25
-let g:winManagerWindowLayout='NERDTree|TagList'
-" 为了解决NERDTree集成到winmanager的bug，我修改了winmanager.vim的函数ToggleWindowsManager
-" let g:winManagerWindowLayout='FileExplorer|TagList'
-map <c-w><c-b> :BottomExplorerWindow<cr>
-map <c-w><c-f> :FirstExplorerWindow<cr>
-" winmanager plugin config
-
 let g:alternateNoDefaultAlternate = 1
 let g:alternateSearchPath = 'reg:#src/\([^/]*\)#src/include/\1##,reg:#include/\([^/]*\)#\1##,reg:#crmframe/\([^/]*\)#include/\1##,reg:#include/\([^/]*\)#crmframe/\1##'
 " a.vim plugin
@@ -264,14 +244,6 @@ endfunction
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " reference options, current useless ...
-" xterm 配置
-if &term=="xterm"
-"	set t_k2=^V^[[K " good!!!
-"	set <F2>=^V^[[K " good!!!
-"	set <C-Tab>=^V^[[K
-"	map <F2> :tabnext
-endif
-
 
 "autocmd BufNewFile,BufRead *.json set ft=javascript
 "augroup json_autocmd
