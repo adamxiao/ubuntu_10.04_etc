@@ -98,7 +98,7 @@ map <F3> :NERDTreeToggle<cr>
 "map <F4> :call Search_Word()<CR>:copen<CR>
 nmap <F4> :vimgrep /\<<C-R>=expand("<cword>")<CR>\>/ **/*.h **/*.c
 nmap <F5> :make<CR>
-nmap <F5><F5> :make clean all<CR>
+"nmap <F5><F5> :make clean all<CR>
 autocmd FileType xml nmap <F5> :%!crm_call_xml_svc.py -<CR>
 autocmd FileType xml vmap <F5> !crm_call_xml_svc.py<CR>
 autocmd FileType xml nmap <F5><F5> :%!crm_call_xml_test.py -<CR>
