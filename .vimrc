@@ -21,23 +21,9 @@ set dir=~/tmp
 set laststatus=2
 set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P>
 " status bar config
-"set backup
-"set patchmode=.org~
-" set backup options
 set foldmethod=manual
-source $HOME/.vim/etc/abbreviations.vim
 set diffopt=filler,vertical
 set display=lastline
-"set expandtab
-"set cindent
-"set smartindent
-"set ignorecase
-"set smartcase
-"set wrapscan
-"set noincsearch
-"set nocul
-"set nocuc
-"set nonu
 
 
 " 1.1 file type options
@@ -50,8 +36,9 @@ au FileType c,cpp setlocal nu
 "autocmd FileType c setlocal expandtab shiftwidth=2 tabstop=2 smarttab softtabstop=2
 au BufEnter *.c,*.h,*.cpp,*.hpp,*.cc set expandtab
 "autocmd FileType c source ~/.vim/etc/c.vim
+" TODO : optimize the setting
 
-" Strip trailing whitespace
+" automate Strip trailing whitespace when save c and cpp source
 function! <SID>StripTrailingWhitespaces()
     " Preparation: save last search, and cursor position.
     let _s=@/
@@ -93,11 +80,8 @@ command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
 
 map <F2> :A<cr>
 map <F3> :NERDTreeToggle<cr>
-""map <F3><F3> :TlistToggle<cr>
-"map <F4> :call Search_Word()<CR>:copen<CR>
 nmap <F4> :vimgrep /\<<C-R>=expand("<cword>")<CR>\>/ **/*.h **/*.c
 nmap <F5> :make<CR>
-"nmap <F5><F5> :make clean all<CR>
 autocmd FileType xml nmap <F5> :%!crm_call_xml_svc.py -<CR>
 autocmd FileType xml vmap <F5> !crm_call_xml_svc.py<CR>
 autocmd FileType xml nmap <F5><F5> :%!crm_call_xml_test.py -<CR>
@@ -143,16 +127,7 @@ nmap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>
 " cscope key map
 
 
-set path+=./**
-set path+=/home/crm20/tuxedo11gR1/include
-set path+=/home/crm20/oracle/product/10.2.0/db_1/**
-set path+=/crm20c_background/tools
-set path+=/crm20c_background/tools/inc
-set path+=/crm20c_background/tools/db
-set path+=/crm20c_background/tools/rdb
-set path+=/crm20c_background/dev/mpw.tydic.src/include
-set path+=/crm20c_background/dev/src/include/**
-set path+=/crm20c_background/dev/src/service/**
+set path+=**/**
 " 设置tuxedo，oracle，tools等头文件目录
 set tags=tags;,~/.vim/systags,~/.vim/libtags
 " 将系统已经生成的tags导入
@@ -253,12 +228,6 @@ endf
 silent! execute "call Add_CsTag()"
 " ------定义增加tags和cscope函数
 
-function Search_Word()
-	let w = expand("<cword>") " 在当前光标位置抓词
-	execute "vimgrep /\<" w "\>/ **/*.h **/*.cpp"
-endfunction
-" ------ 定义全局搜索函数
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " reference options, current useless ...
 
@@ -274,3 +243,18 @@ endfunction
 "augroup END 
 "set cin
 " 实现C程序的缩进
+
+
+"set backup
+"set patchmode=.org~
+"set backup options
+"set expandtab
+"set cindent
+"set smartindent
+"set ignorecase
+"set smartcase
+"set wrapscan
+"set noincsearch
+"set nocul
+"set nocuc
+"set nonu
