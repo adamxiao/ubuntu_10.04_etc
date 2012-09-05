@@ -37,7 +37,7 @@ set display=lastline
 "set noincsearch
 "set nocul
 "set nocuc
-set nu
+"set nonu
 
 
 " 1.1 file type options
@@ -46,7 +46,24 @@ au! BufRead,BufNewFile *.json set filetype=json
 au BufRead,BufNewFile *.txt setlocal ft=txt
 au BufRead,BufNewFile 2012_*_*.log setlocal ft=crm_log
 au BufEnter *.c,*.h,*.cpp,*.hpp,*.cc source ~/.vim/etc/c.vim
+au FileType c,cpp setlocal nu
+"autocmd FileType c setlocal expandtab shiftwidth=2 tabstop=2 smarttab softtabstop=2
+au BufEnter *.c,*.h,*.cpp,*.hpp,*.cc set expandtab
 "autocmd FileType c source ~/.vim/etc/c.vim
+
+" Strip trailing whitespace
+function! <SID>StripTrailingWhitespaces()
+    " Preparation: save last search, and cursor position.
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+    " Do the business:
+    %s/\s\+$//e
+    " Clean up: restore previous search history, and cursor position
+    let @/=_s
+    call cursor(l, c)
+endfunction
+autocmd BufWritePre *.h,*.c,*.cpp :call <SID>StripTrailingWhitespaces()
 
 
 " 1.5. formating options
@@ -80,7 +97,7 @@ map <F3> :NERDTreeToggle<cr>
 "map <F4> :call Search_Word()<CR>:copen<CR>
 nmap <F4> :vimgrep /\<<C-R>=expand("<cword>")<CR>\>/ **/*.h **/*.c
 nmap <F5> :make<CR>
-nmap <F5><F5> :make clean all<CR>
+"nmap <F5><F5> :make clean all<CR>
 autocmd FileType xml nmap <F5> :%!crm_call_xml_svc.py -<CR>
 autocmd FileType xml vmap <F5> !crm_call_xml_svc.py<CR>
 autocmd FileType xml nmap <F5><F5> :%!crm_call_xml_test.py -<CR>

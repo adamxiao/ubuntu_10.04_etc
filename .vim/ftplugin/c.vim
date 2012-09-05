@@ -455,8 +455,10 @@ imap    <buffer>  <silent>  <LocalLeader>hm    <C-C>:call C_Help("m")<CR>
 "-------------------------------------------------------------------------------
 " additional mapping : complete a classical C comment: '/*' => '/* | */'
 "-------------------------------------------------------------------------------
-inoremap  <buffer>  /*       /*<Space><Space>*/<Left><Left><Left>
-vnoremap  <buffer>  /*      s/*<Space><Space>*/<Left><Left><Left><Esc>p
+"inoremap  <buffer>  /*       /*<Space><Space>*/<Left><Left><Left>
+inoremap  <buffer>  /*       /*!<<Space><Space>*/<Left><Left><Left>
+vnoremap  <buffer>  /*      s/*!<<Space><Space>*/<Left><Left><Left><Esc>p
+"vnoremap  <buffer>  /*      s/*<Space><Space>*/<Left><Left><Left><Esc>p
 "
 "-------------------------------------------------------------------------------
 " additional mapping : complete a classical C multi-line comment: 
@@ -464,7 +466,8 @@ vnoremap  <buffer>  /*      s/*<Space><Space>*/<Left><Left><Left><Esc>p
 "                                    * |
 "                                    */
 "-------------------------------------------------------------------------------
-inoremap  <buffer>  /*<CR>  /*<CR><CR>/<Esc>kA<Space>
+inoremap  <buffer>  /*<CR>  /*!<CR><CR>/<Esc>kA<Space>
+"inoremap  <buffer>  /*<CR>  /*<CR><CR>/<Esc>kA<Space>
 "
 "-------------------------------------------------------------------------------
 " additional mapping : {<CR> always opens a block
