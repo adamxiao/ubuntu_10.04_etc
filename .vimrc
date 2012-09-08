@@ -7,9 +7,8 @@ set langmenu=zh_CN.UTF-8
 set encoding=UTF-8
 set termencoding=UTF-8
 language message zh_CN.UTF-8
-"set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
-set fileencodings=cp936,ucs-bom,utf-8,gb18030,big5,euc-jp,euc-kr,latin1
-set fileencoding=cp936
+set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
+set fileencoding=utf-8
 " encoding config
 set tabstop=4
 set shiftwidth=4
@@ -27,6 +26,9 @@ set display=lastline
 
 
 " 1.1 file type options
+au BufNewFile *.c,*.h set fileencoding=cp936
+"au BufRead *c,*.h setlocal fileencodings=cp936,ucs-bom,utf-8,gb18030,big5,euc-jp,euc-kr,latin1
+autocmd FileType c setlocal fileencodings=cp936,ucs-bom,utf-8,gb18030,big5,euc-jp,euc-kr,latin1
 autocmd FileType python setlocal expandtab shiftwidth=2 tabstop=2 smarttab softtabstop=2
 au! BufRead,BufNewFile *.json set filetype=json
 au BufRead,BufNewFile *.txt setlocal ft=txt
