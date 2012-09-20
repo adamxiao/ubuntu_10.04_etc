@@ -3,32 +3,20 @@
 # Ignore special backup file
 *~
 *-
-# Ignore special log file
-*.log
-.vim/.netrwhist
-# Ignore special files
-/.gtk-bookmarks
-/.subversion/auth/
+# Ignore special log files
+/.vim/.netrwhist
 /.vim/systags
+/.vim/libtags
 # Except this file
+# git config
 !.gitignore
+!.gitconfig
+# bash config
 !.bash_aliases
 !.bash_logout
 !.bashrc
 !.profile
-!.subversion/
+# vim config
 !.vim/
 !.vimrc
 !.gvimrc
-!.keysnail.js
-!.gitconfig
-!.dmrc
-
-#!.config/
-#!.gconf/
-#!.gconfd/
-#!.gnome2/
-#!.local/
-
-#.dmrc => Gnome per user language encoding configuration using .dmrc file
-#.mozilla need git control ???
