@@ -455,10 +455,10 @@ imap    <buffer>  <silent>  <LocalLeader>hm    <C-C>:call C_Help("m")<CR>
 "-------------------------------------------------------------------------------
 " additional mapping : complete a classical C comment: '/*' => '/* | */'
 "-------------------------------------------------------------------------------
-"inoremap  <buffer>  /*       /*<Space><Space>*/<Left><Left><Left>
-inoremap  <buffer>  /*       /*!<<Space><Space>*/<Left><Left><Left>
-vnoremap  <buffer>  /*      s/*!<<Space><Space>*/<Left><Left><Left><Esc>p
-"vnoremap  <buffer>  /*      s/*<Space><Space>*/<Left><Left><Left><Esc>p
+inoremap  <buffer>  /*       /*<Space><Space>*/<Left><Left><Left>
+vnoremap  <buffer>  /*      s/*<Space><Space>*/<Left><Left><Left><Esc>p
+" added by adam 2012-09-25
+vnoremap  <buffer>  /*<Space>      s/*!<<Space><Space>*/<Left><Left><Left><Esc>p
 "
 "-------------------------------------------------------------------------------
 " additional mapping : complete a classical C multi-line comment: 
