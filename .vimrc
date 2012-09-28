@@ -179,12 +179,15 @@ set completeopt=longest,menu
 let g:SuperTabDefaultCompletionType = "context"
 " supertab plugin config
 
+" TODO : remove this plugin
 let g:completekey = "<C-b>"
 " code_complete plugin config
 
+" TODO : remove this plugin
 let g:C_Ctrl_j   = 'off'
 " c support plugin
 
+" TODO : remove this plugin
 let g:BASH_Ctrl_j   = 'off'
 " bash support plugin
 
@@ -204,7 +207,10 @@ let Tlist_File_Fold_Auto_Close=1
 
 
 let g:alternateNoDefaultAlternate = 1
-let g:alternateSearchPath = 'reg:#src/\([^/]*\)#src/include/\1##,reg:#include/\([^/]*\)#\1##,reg:#crmframe/\([^/]*\)#include/\1##,reg:#include/\([^/]*\)#crmframe/\1##'
+let g:alternateRelativeFiles = 1
+"let g:alternateSearchPath = 'reg:#src/\([^/]*\)#src/include/\1##,reg:#include/\([^/]*\)#\1##,reg:#crmframe/\([^/]*\)#include/\1##,reg:#include/\([^/]*\)#crmframe/\1##'
+"let g:alternateSearchPath = 'reg:#./#./include##,reg:reg:#./include#./##,reg'
+let g:alternateSearchPath = 'wdr:include,sfr:../src,sfr:../include'
 " a.vim plugin
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -212,7 +218,7 @@ let g:alternateSearchPath = 'reg:#src/\([^/]*\)#src/include/\1##,reg:#include/\(
 
 function Do_CsTag()
 "    silent! execute "!ctags -R '.'"
-    silent! execute "!ctags -R --c-kinds=+p --c++-kinds=+px --fields=+iaS --extra=+q --languages=c,c++ '.'"
+    silent! execute "!ctags -R --c-kinds=+p --c++-kinds=+px --fields=+iaS --extra=+q --languages=c,c++ --extra=+f '.'"
     if(executable('cscope') && has("cscope") )
         silent! execute "!find -L `pwd` -name '*.h' -o -name '*.c' -o -name '*.cpp' -o -name '*.java' -o -name '*.cs' -o     -name '*.cxx' -o -name '*.hxx'> cscope.files -o -name '*.hpp' -o -name '*.py'"   
 endif
