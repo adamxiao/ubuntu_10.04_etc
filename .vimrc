@@ -210,8 +210,12 @@ let g:alternateNoDefaultAlternate = 1
 let g:alternateRelativeFiles = 1
 "let g:alternateSearchPath = 'reg:#src/\([^/]*\)#src/include/\1##,reg:#include/\([^/]*\)#\1##,reg:#crmframe/\([^/]*\)#include/\1##,reg:#include/\([^/]*\)#crmframe/\1##'
 "let g:alternateSearchPath = 'reg:#./#./include##,reg:reg:#./include#./##,reg'
-let g:alternateSearchPath = 'wdr:include,sfr:../src,sfr:../include'
+let g:alternateSearchPath = 'wdr:include,sfr:../src,sfr:../include,sfr:..'
 " a.vim plugin
+
+nmap <leader>ff :FufFile **/<CR>
+nmap <leader>fb :FufBuffer<CR>
+" fuzzfind plugin
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ------ function definition
@@ -235,6 +239,37 @@ endf
 
 silent! execute "call Add_CsTag()"
 " ------定义增加tags和cscope函数
+
+" Find file in current directory and edit it.
+function! Find(name)
+  let l:list=system("find . -name '".a:name."' | perl -ne 'print \"$.\\t$_\"'")
+  let l:num=strlen(substitute(l:list, "[^\n]", "", "g"))
+  if l:num < 1
+    echo "'".a:name."' not found"
+    return
+  endif
+  if l:num != 1
+    echo l:list
+    let l:input=input("Which ? (CR=nothing)\n")
+    if strlen(l:input)==0
+      return
+    endif
+    if strlen(substitute(l:input, "[0-9]", "", "g"))>0
+      echo "Not a number"
+      return
+    endif
+    if l:input<1 || l:input>l:num
+      echo "Out of range"
+      return
+    endif
+    let l:line=matchstr("\n".l:list, "\n".l:input."\t[^\n]*")
+  else
+    let l:line=l:list
+  endif
+  let l:line=substitute(l:line, "^[^\t]*\t./", "", "")
+  execute ":e ".l:line
+endfunction
+command! -nargs=1 Find :call Find("<args>")
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " reference options, current useless ...
