@@ -183,14 +183,6 @@ let g:SuperTabDefaultCompletionType = "context"
 let g:completekey = "<C-b>"
 " code_complete plugin config
 
-" TODO : remove this plugin
-let g:C_Ctrl_j   = 'off'
-" c support plugin
-
-" TODO : remove this plugin
-let g:BASH_Ctrl_j   = 'off'
-" bash support plugin
-
 
 let g:sqlutil_keyword_case = '\U'
 let g:sqlutil_align_first_word = 1
@@ -216,6 +208,11 @@ let g:alternateSearchPath = 'wdr:include,sfr:../src,sfr:../include,sfr:..'
 nmap <leader>ff :FufFile **/<CR>
 nmap <leader>fb :FufBuffer<CR>
 " fuzzfind plugin
+
+let g:snips_author = 'Adam Xiao'
+let g:snips_authorref = 'iefcu'
+let g:snips_email = 'iefcuxy@gmail.com'
+" snippet plugin
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ------ function definition
