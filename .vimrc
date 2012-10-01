@@ -184,14 +184,6 @@ let g:completekey = "<C-b>"
 " code_complete plugin config
 
 
-let g:sqlutil_keyword_case = '\U'
-let g:sqlutil_align_first_word = 1
-let g:sqlutil_align_comma = 1
-let g:sqlutil_align_keyword_right = 1
-let g:sqlutil_align_where = 0
-" SQLUtilities config
-
-
 let Tlist_Inc_Winwidth=0
 let Tlist_Use_Right_Window=1
 let Tlist_File_Fold_Auto_Close=1
