@@ -142,31 +142,6 @@ filetype plugin on
 filetype plugin indent on
 " set plugin on
 
-let g:dbext_default_profile_1_crm20_c = 'type=ORA:user=crm20_c:passwd=crm20c:srvname=gz_crm'
-let g:dbext_default_profile_2_dic_551 = 'type=ORA:user=dic_551:passwd=dic_551:srvname=gz_crm'
-let g:dbext_default_profile_3_45_conf = 'type=ORA:user=crm20_pub:passwd=pub2011:srvname=CRMTEST_18'
-let g:dbext_default_profile_4_45_inst = 'type=ORA:user=crm20_ins:passwd=ins2011:srvname=CRMTEST_18'
-let g:dbext_default_profile_4_45_test = 'type=ORA:user=gj_ins:passwd=gj_ins:srvname=CRMTEST_18'
-let g:dbext_default_profile_5_ora_me = 'type=ORA:user=adam:passwd=iefcu6251965:host=localhost:srvname=orcl'
-" database connection profile
-let g:dbext_default_ORA_cmd_header = "" .
-                        \ "col * format a4\n" .
-                        \ "set num 12\n" .
-                        \ "set pagesize 50000\n" .
-                        \ "set sqlprompt \"\"\n" .
-                        \ "set linesize 10000\n" .
-                        \ "set flush off\n" .
-                        \ "set colsep \"   \"\n" .
-                        \ "set tab off\n\n"
-"let g:dbext_default_display_cmd_line = 1
-"这样执行命令的时候，就知道dbext是怎样调用的了
-"let  g:dbext_default_DBI_orientation = 'vertical' " useless
-"let g:dbext_default_buffer_lines = 50
-"返回结果数
-"let g:dbext_default_window_use_right = 1
-"let g:dbext_default_window_use_horiz = 0
-" 设置成右边窗口显示
-" dbext plugin
 
 let g:pydiction_location = '~/.vim/after/ftplugin/pydiction-1.2/complete-dict'
 let g:pydiction_menu_height = 20 
