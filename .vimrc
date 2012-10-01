@@ -154,10 +154,6 @@ set completeopt=longest,menu
 let g:SuperTabDefaultCompletionType = "context"
 " supertab plugin config
 
-" TODO : remove this plugin
-let g:completekey = "<C-b>"
-" code_complete plugin config
-
 
 let Tlist_Inc_Winwidth=0
 let Tlist_Use_Right_Window=1
