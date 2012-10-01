@@ -3,3 +3,6 @@
 	email = iefcuxy@gmail.com
 [alias]
 	st = !git status -s
+	co = !git checkout
+	ci = !git commit
+	di = !git difftool -t vimdiff
