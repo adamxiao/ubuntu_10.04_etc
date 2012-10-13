@@ -1,4 +1,12 @@
 # 我使用的插件
+command-t-1.4 => 文件搜索插件(基于ruby,速度很快,算法好很精确, 但是只能模糊查找)
+ctrlp-1.78 => 文件(可以精确和模糊, 还可以仅仅查找文件名), MRU文件, tag搜索
+
+# 备用插件, 可能也是好插件
+fugitive.vim => A Git wrapper so awesome, it should be illegal 
+Trinity => 类似sourceinsight的源码预览窗口
+clang complete => Use of Clang for completing C, C++, Objective-C and Objective-C++ 
+
 # already removed
 pydiction => python补全插件
 bash-support => bash编写插件, 包括检查语法和运行bash脚本

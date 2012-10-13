@@ -172,6 +172,22 @@ nmap <leader>ff :FufFile **/<CR>
 nmap <leader>fb :FufBuffer<CR>
 " fuzzfind plugin
 
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlPTag'
+let g:ctrlp_working_path_mode = ''
+set wildignore+=*.o,*.so,*.svn,*.git
+let g:ctrlp_max_files = 20000
+    let g:ctrlp_custom_ignore = {
+      \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+      \ 'file': '\v\.(exe|so|dll)$',
+      \ }
+let g:ctrlp_match_window_reversed = 0
+let g:ctrlp_max_height = 35
+let g:ctrlp_switch_buffer = 'Et'
+let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_mruf_relative = 1
+" ctrlp plugin
+
 let g:snips_author = 'Adam Xiao'
 let g:snips_authorref = 'iefcu'
 let g:snips_email = 'iefcuxy@gmail.com'
