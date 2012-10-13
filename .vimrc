@@ -168,10 +168,6 @@ let g:alternateRelativeFiles = 1
 let g:alternateSearchPath = 'wdr:include,sfr:../src,sfr:../include,sfr:..'
 " a.vim plugin
 
-nmap <leader>ff :FufFile **/<CR>
-nmap <leader>fb :FufBuffer<CR>
-" fuzzfind plugin
-
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlPTag'
 let g:ctrlp_working_path_mode = ''
