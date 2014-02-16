@@ -3,6 +3,7 @@
 # adam used only
 alias va='vi'
 alias mk='make 2>&1 | vim -'
+alias chroot='chroot --userspec=root:root'
 #wns-team related
 alias conn99_1='ssh xiaoyun@192.168.99.1'
 alias conn99_2='ssh xiaoyun@192.168.99.2'

@@ -25,73 +25,19 @@ set diffopt=filler,vertical
 set display=lastline
 
 
-" 1.1 file type options
-au BufNewFile *.c,*.h set fileencoding=cp936
-"au BufRead *c,*.h setlocal fileencodings=cp936,ucs-bom,utf-8,gb18030,big5,euc-jp,euc-kr,latin1
-autocmd FileType c setlocal fileencodings=cp936,ucs-bom,utf-8,gb18030,big5,euc-jp,euc-kr,latin1
-autocmd FileType python setlocal expandtab shiftwidth=2 tabstop=2 smarttab softtabstop=2
+" file type detect
 au! BufRead,BufNewFile *.json set filetype=json
 au BufRead,BufNewFile *.txt setlocal ft=txt
-au BufRead,BufNewFile 2012_*_*.log setlocal ft=crm_log
-au BufEnter *.c,*.h,*.cpp,*.hpp,*.cc source ~/.vim/etc/c.vim
-au FileType c,cpp setlocal nu
-"autocmd FileType c setlocal expandtab shiftwidth=2 tabstop=2 smarttab softtabstop=2
-au BufEnter *.c,*.h,*.cpp,*.hpp,*.cc set expandtab
-"autocmd FileType c source ~/.vim/etc/c.vim
-" TODO : optimize the setting
 
-" automate Strip trailing whitespace when save c and cpp source
-function! <SID>StripTrailingWhitespaces()
-    " Preparation: save last search, and cursor position.
-    let _s=@/
-    let l = line(".")
-    let c = col(".")
-    " Do the business:
-    %s/\s\+$//e
-    " Clean up: restore previous search history, and cursor position
-    let @/=_s
-    call cursor(l, c)
-endfunction
-autocmd BufWritePre *.h,*.c,*.cpp :call <SID>StripTrailingWhitespaces()
-
-
-" 1.5. formating options
-"autocmd FileType c,cpp let &l:formatprg='astyle --mode=c --style=k/r -t'
-"autocmd FileType cpp,c let &l:equalprg='astyle --mode=c --style=k/r -t'
-autocmd FileType html let &l:equalprg='xmllint --format --encode UTF-8 --recover - 2>/dev/null'
-""autocmd FileType html let &l:formatprg='xmllint --format --encode UTF-8 --recover - 2>/dev/null'
-"autocmd FileType html let &l:formatprg='tidy --indent yes -q'
-"autocmd FileType xml let &l:equalprg='xmllint --format --encode UTF-8 --recover - 2>/dev/null'
-autocmd FileType xml let &l:equalprg='tidy --input-xml true -indent --indent-spaces 2 -wrap 0 -raw -q'
-autocmd FileType sql let &l:equalprg='sql_format.py -'
-autocmd FileType sql set encoding=cp936
-"autocmd FileType json let &l:equalprg='python -mjson.tool'
-""autocmd FileType json let &l:formatprg='json_format.py'
-autocmd FileType json let &l:equalprg='/opt/js-beautify/python/js-beautify -i -'
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" ------ shortcut command 
+" shortcut command 
 command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
 	 	\ | wincmd p | diffthis
-"command Svndiff vert new | set bt=nofile | r!svn cat # | 0d_ | diffthis
-	 	"\ | wincmd p | diffthis
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" ------ key mapping
-"  plugin key mapping:
-"  F9 compile, \sf format sql
-
+" key mapping
 map <F2> :A<cr>
 map <F3> :NERDTreeToggle<cr>
-nmap <F4> :vimgrep /\<<C-R>=expand("<cword>")<CR>\>/ **/*.h **/*.c
+nmap <F4> :vimgrep /\<<C-R>=expand("<cword>")<CR>\>/ **/*
 nmap <F5> :make<CR>
-autocmd FileType xml nmap <F5> :%!crm_call_xml_svc.py -<CR>
-autocmd FileType xml vmap <F5> !crm_call_xml_svc.py<CR>
-autocmd FileType xml nmap <F5><F5> :%!crm_call_xml_test.py -<CR>
-autocmd FileType xml vmap <F5><F5> !crm_call_xml_test.py<CR>
-autocmd FileType json nmap <F5> :%!crm_call_json_svc.py -<CR>
-autocmd FileType json vmap <F5> !crm_call_json_svc.py<CR>
-autocmd FileType json nmap <F5><F5> :%!crm_call_json_svc_test.py -<CR>
-autocmd FileType json vmap <F5><F5> !crm_call_json_svc_test.py<CR>
 map <F6> :cw<CR>
 map <F6><F6> :ccl<CR>
 map <F7> :cn<CR>
@@ -107,15 +53,10 @@ nmap <C-H> :%s/\<<C-R>=expand("<cword>")<CR>\>/
 vmap <C-H> y:%s/<C-R>=substitute(escape(@", '^$~.*\\/[]'), "\n", '\\n', 'g')<CR>/
 nmap ,a ggVG
 map <S-q><S-q> :qa!<CR>
-"map <C-S-F> :call FormartSrc()<CR>
 nmap <Up> gk
 nmap <Down> gj
-autocmd FileType sql vmap <leader>sp  !sql_parse.sh<CR>
-
-
 nmap <S-t> :tabnew <CR>
-" tab navigation config
-
+" other util key mapping
 
 nmap <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>   
 nmap <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR>   
@@ -123,16 +64,13 @@ nmap <C-\>c :cs find c <C-R>=expand("<cword>")<CR><CR>
 nmap <C-\>t :cs find t <C-R>=expand("<cword>")<CR><CR>   
 nmap <C-\>e :cs find e <C-R>=expand("<cword>")<CR><CR>   
 nmap <C-\>f :cs find f <C-R>=expand("<cfile>")<CR><CR>   
-"nmap <C-\>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
 nmap <C-\>i :cs find i <C-R>=expand("<cfile>")<CR><CR>
 nmap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>
 " cscope key map
 
 
 set path+=**/**
-" 设置tuxedo，oracle，tools等头文件目录
 set tags=tags;,~/.vim/systags,~/.vim/libtags
-" 将系统已经生成的tags导入
 " taglist config
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -154,6 +92,7 @@ set completeopt=longest,menu
 let g:SuperTabDefaultCompletionType = "context"
 " supertab plugin config
 
+let g:CommandTMaxHeight = 20
 
 let Tlist_Inc_Winwidth=0
 let Tlist_Use_Right_Window=1
@@ -243,33 +182,3 @@ function! Find(name)
 endfunction
 command! -nargs=1 Find :call Find("<args>")
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" reference options, current useless ...
-
-"autocmd BufNewFile,BufRead *.json set ft=javascript
-"augroup json_autocmd
-"  autocmd!
-"  autocmd FileType json set autoindent
-"  autocmd FileType json set formatoptions=tcq2l
-"  autocmd FileType json set textwidth=78 shiftwidth=2
-"  autocmd FileType json set softtabstop=2 tabstop=8
-"  autocmd FileType json set expandtab
-"  autocmd FileType json set foldmethod=syntax
-"augroup END 
-"set cin
-" 实现C程序的缩进
-
-
-"set backup
-"set patchmode=.org~
-"set backup options
-"set expandtab
-"set cindent
-"set smartindent
-"set ignorecase
-"set smartcase
-"set wrapscan
-"set noincsearch
-"set nocul
-"set nocuc
-"set nonu
