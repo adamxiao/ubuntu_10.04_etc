@@ -11,7 +11,7 @@ setlocal fileencodings=cp936,ucs-bom,utf-8,gb18030,big5,euc-jp,euc-kr,latin1
 setlocal fileencoding=cp936
 
 " 2. key mapping
-nmap <buffer> <silent> <F4> :vimgrep /\<<C-R>=expand("<cword>")<CR>\>/ **/*.h **/*.c
+nmap <buffer> <F4> :vimgrep /\<<C-R>=expand("<cword>")<CR>\>/ **/*.h **/*.c
 nmap <buffer> <silent> <F5> :make<CR>
 
 " 0. other options
