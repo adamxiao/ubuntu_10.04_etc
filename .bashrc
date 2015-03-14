@@ -112,8 +112,14 @@ export SVN_EDITOR=vi
 export EDITOR=vi
 export LD_LIBRARY_PATH=/usr/local/lib
 export date=`date +%Y%m%d`
+export arch=x64
 
 # -------------------------------------------------------------------------
+# 加入$HOME/usr/目录下的软件
+adam_local=`echo $HOME/usr/*/bin | sed 's/ /:/g'`
+export PATH=$HOME/usr/bin:$adam_local:$PATH
+
+export PATH=/opt/cmake-3.2.0-rc2-Linux-x86_64/bin/:$PATH
 
 # other reference
 ##export ORACLE_OWNER=crm20

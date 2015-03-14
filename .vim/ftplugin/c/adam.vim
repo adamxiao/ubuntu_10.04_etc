@@ -16,7 +16,7 @@ nmap <buffer> <silent> <F5> :make<CR>
 
 " 0. other options
 setlocal nu
-setlocal mouse=a
+"setlocal mouse=a
 
 " Intenting
 setlocal cindent
