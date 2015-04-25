@@ -132,12 +132,15 @@ let g:snips_email = 'iefcuxy@gmail.com'
 " ------ function definition
 
 function Do_CsTag()
-"    silent! execute "!ctags -R '.'"
-    silent! execute "!ctags -R --c-kinds=+p --c++-kinds=+px --fields=+iaS --extra=+q --languages=c,c++ --extra=+f '.'"
+	if MySys() == 'linux'
+		silent! execute "!ctags -R --c-kinds=+p --c++-kinds=+px --fields=+iaS --extra=+q --languages=c,c++ --extra=+f '.'"
+	elseif MySys() == 'windows'
+		silent! execute "!ctags -R ."
+	endif
     if(executable('cscope') && has("cscope") )
         silent! execute "!find -L `pwd` -name '*.h' -o -name '*.c' -o -name '*.cpp' -o -name '*.java' -o -name '*.cs' -o     -name '*.cxx' -o -name '*.hxx'> cscope.files -o -name '*.hpp' -o -name '*.py'"   
-endif
-    silent! execute "!cscope -bq"
+        silent! execute "!cscope -bq"
+	endif
     silent! execute "call Add_CsTag()"
 endf
 
@@ -181,4 +184,13 @@ function! Find(name)
   execute ":e ".l:line
 endfunction
 command! -nargs=1 Find :call Find("<args>")
+
+" Platform
+function! MySys()
+  if has("win16") || has("win32") || has("win64") || has("win95")
+    return "windows"
+  else
+    return "linux"
+  endif
+endfunction
 

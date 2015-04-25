@@ -91,6 +91,11 @@ if v:version < 700
      finish
 endif
 
+" added by adam 2015-04-25
+if !has('iconv')
+     finish
+endif
+
 fun! s:escape(name)
   " shellescape() was added by patch 7.0.111
   if exists("*shellescape")
