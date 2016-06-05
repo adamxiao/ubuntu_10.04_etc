@@ -30,7 +30,7 @@ au! BufRead,BufNewFile *.json set filetype=json
 au BufRead,BufNewFile *.txt setlocal ft=txt
 
 " shortcut command 
-command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
+command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
 	 	\ | wincmd p | diffthis
 
 " key mapping
@@ -131,7 +131,7 @@ let g:snips_email = 'iefcuxy@gmail.com'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ------ function definition
 
-function Do_CsTag()
+function! Do_CsTag()
 	if MySys() == 'linux'
 		silent! execute "!ctags -R --c-kinds=+p --c++-kinds=+px --fields=+iaS --extra=+q --languages=c,c++ --extra=+f '.'"
 	elseif MySys() == 'windows'
@@ -144,7 +144,7 @@ function Do_CsTag()
     silent! execute "call Add_CsTag()"
 endf
 
-function Add_CsTag()
+function! Add_CsTag()
     if filereadable("cscope.out")
         execute "cs add cscope.out"
         execute "set tags+=./tags"
@@ -152,7 +152,7 @@ function Add_CsTag()
 endf
 
 silent! execute "call Add_CsTag()"
-" ------定义增加tags和cscope函数
+" ------瀹氫箟澧炲姞tags鍜宑scope鍑芥暟
 
 " Find file in current directory and edit it.
 function! Find(name)

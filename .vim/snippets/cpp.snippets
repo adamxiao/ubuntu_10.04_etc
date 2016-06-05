@@ -29,6 +29,39 @@ snippet cl
 		${3:/* data */}
 	};
 
+snippet try
+	try {
+		${1:/* code */}
+	} catch(${2:const std::exception& e}) {
+		${3:std::cerr << e.what() << '\n';}
+	}
+
+snippet formap
+	map<${3:int}, ${4:string}>::iterator ${1:iter};
+	for (${1:iter} = ${2:mMap}.begin(); ${1:iter} != ${2:mMap}.end(); ${1:iter}++) {
+		${5:/* code */}
+	}
+
+snippet forlist
+	list<${2:string}>::iterator ${0:iter};
+	for (${0:iter} = ${1:lList}.begin(); ${0:iter} != ${1:lList}.end(); ${0:iter}++) {
+		${3:/* code */}
+	}
+
+snippet forvector
+	vector<${3:string}>::iterator ${1:iter};
+	for (${1:iter} = ${2:vVec}.begin(); ${1:iter} != ${2:vVec}.end(); ${1:iter}++) {
+		${4:/* code */}
+	}
+
+# -------------------------------------------------------------------------
+# utility
+snippet atoi
+	hydra::fs2u32(${1:str})${2}
+snippet time
+	time(NULL)
+
+
 # -------------------------------------------------------------------------
 # crm20 project
 snippet crm_class_h crm原子服务头文件

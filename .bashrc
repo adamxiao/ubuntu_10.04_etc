@@ -103,44 +103,19 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 
+# -------------------------------------------------------------------------
 # added by adam
+# -------------------------------------------------------------------------
 set -o vi
 #export PS1='\u@\h: \W\$'
 export PS1="\`if [ \j != "0" ]; then echo \[\e[31m\][jobs:\j] \[\e[0m\]; fi\`\u@\h: \W\$"
 PATH=$HOME/link_bin:$PATH
-export SVN_EDITOR=vi
-export EDITOR=vi
+export SVN_EDITOR=vim
+export EDITOR=vim
 export LD_LIBRARY_PATH=/usr/local/lib
-export date=`date +%Y%m%d`
-export arch=x64
 
-# -------------------------------------------------------------------------
+[[ -s ~/.bashrc.local ]] && . ~/.bashrc.local
+
 # 加入$HOME/usr/目录下的软件
 adam_local=`echo $HOME/usr/*/bin | sed 's/ /:/g'`
 export PATH=$HOME/usr/bin:$adam_local:$PATH
-
-export PATH=/opt/cmake-3.2.0-rc2-Linux-x86_64/bin/:$PATH
-
-# other reference
-##export ORACLE_OWNER=crm20
-##ORACLE_SID用来设置sqlplus默认连接数据库
-#export ORACLE_SID=orcl
-#export SQLPATH=/home/adam # sqlplu login script path
-#export NLS_LANG=American_America.ZHS16GBK
-## tuxedo 客户端应用编程
-#export TUXDIR=/home/crm20/tuxedo11gR1
-#export WSNADDR=//192.168.166.140:9087
-#export FLDTBLDIR32=/crm20c_background/dev/release/bin
-#export FIELDTBLS32=crmdem.fml32
-
-# 相关软件环境变量
-if [ "$TUXEDO_HOME" ]; then
-	export PATH=$TUXEDO_HOME/bin:$PATH
-	export LD_LIBRARY_PATH=$TUXEDO_HOME/lib:$LD_LIBRARY_PATH
-fi
-if [ "$ORACLE_HOME" ]; then
-	export PATH=$ORACLE_HOME/bin:$PATH
-fi
-if [ "$JAVA_HOME" ]; then
-	export PATH=$JAVA_HOME/bin:$PATH
-fi

@@ -188,3 +188,30 @@ snippet get_local_ip
 		}
 		return ip;
 	}
+
+# added by adam 2015-10-26 #################################################
+snippet #func
+	/*!
+	 * \brief ${1}
+	 *
+	 * \param null [I] NULL
+	 * \return 
+	 *
+	 * \author `g:snips_author`
+	 * \date `system("date '+%Y-%m-%d'")`
+	 */
+# error log
+snippet err
+	ERROR_LOG("${1:%s}"${2});${3}
+snippet ERROR_LOG
+	ERROR_LOG("${1:%s}"${2});${3}
+# info log
+snippet info
+	INFO_LOG("${1:%s}"${2});${3}
+snippet INFO_LOG
+	INFO_LOG("${1:%s}"${2});${3}
+# debug log
+snippet debug
+	DEBUG_LOG("${1:%s}"${2});${3}
+snippet DEBUG_LOG
+	DEBUG_LOG("${1:%s}"${2});${3}

@@ -8,7 +8,7 @@ let b:adam_did_C_ftplugin = 1
 
 " 1. encoding options
 setlocal fileencodings=cp936,ucs-bom,utf-8,gb18030,big5,euc-jp,euc-kr,latin1
-setlocal fileencoding=cp936
+"setlocal fileencoding=cp936
 
 " 2. key mapping
 nmap <buffer> <F4> :vimgrep /\<<C-R>=expand("<cword>")<CR>\>/ **/*.h **/*.c
