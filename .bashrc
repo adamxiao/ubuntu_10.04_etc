@@ -119,3 +119,4 @@ export LD_LIBRARY_PATH=/usr/local/lib
 # 加入$HOME/usr/目录下的软件
 adam_local=`echo $HOME/usr/*/bin | sed 's/ /:/g'`
 export PATH=$HOME/usr/bin:$adam_local:$PATH
+export HISTTIMEFORMAT="%Y-%m-%d %H:%M:%S"
