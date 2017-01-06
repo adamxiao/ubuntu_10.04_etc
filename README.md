@@ -10,7 +10,7 @@ the /etc directory data in ubuntu 10.04 LST amd64
 ## 1. bashrc配置
 
 ```bash
-echo "[[ -s ~/.bashrc.local ]] && . ~/.bashrc.local" >> ~/.bashrc
+echo "[[ -s ~/.adam_bashrc ]] && . ~/.adam_bashrc" >> ~/.bashrc
 echo 'export LANGUAGE="en"' >> ~/.profile
 echo 'export LANG="en_US.utf8"' >> ~/.profile
 ```
@@ -36,9 +36,9 @@ ctags -R -f ~/.vim/systags --c-kinds=+p --c++-kinds=+px --fields=+iaS --extra=+q
 可能额外需要添加代理配置
 ```
 [https]
-        proxy = http://dev-proxy.oa.com:8080
+	proxy = http://dev-proxy.oa.com:8080
 [http]
-        proxy = http://dev-proxy.oa.com:8080
+	proxy = http://dev-proxy.oa.com:8080
 [push]
-        default = simple
+	default = simple
 ```
