@@ -10,12 +10,9 @@
 # Except this file
 # git config
 !.gitignore
-!.gitconfig
 # bash config
 !.bash_aliases
-!.bash_logout
-!.bashrc
-!.profile
+!.adam_bashrc
 # vim config
 !.vim/
 !.vimrc
