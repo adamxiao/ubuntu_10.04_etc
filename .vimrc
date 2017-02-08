@@ -76,10 +76,58 @@ set tags=tags;,~/.vim/systags,~/.vim/libtags
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ------ plugin config
 
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'mileszs/ack.vim'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'junegunn/vim-easy-align'
+Plugin 'skywind3000/asyncrun.vim'
+"Plugin 'ervandew/supertab'
+"Plugin 'scrooloose/nerdtree'
+"Plugin 'vim-scripts/a.vim'
+"Plugin 'jlanzarotta/bufexplorer'
+"Plugin 'ctrlpvim/ctrlp.vim'
+"Plugin 'mbbill/fencview'
+"Plugin 'Kris2k/matchit'
+"Plugin 'dimasg/vim-mark'
+"Plugin 'vim-scripts/taglist.vim'
+"Plugin 'vim-scripts/vcscommand.vim'
+"" snippets
+"Plugin 'MarcWeber/vim-addon-mw-utils'
+"Plugin 'tomtom/tlib_vim'
+"Plugin 'garbas/vim-snipmate'
+"Plugin 'honza/vim-snippets'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
 filetype plugin on
 filetype plugin indent on
 " set plugin on
 
+" ack grep map
+nmap <F4> :Ack --cpp -w <C-R>=expand("<cword>")<CR>
 
 let g:pydiction_location = '~/.vim/after/ftplugin/pydiction-1.2/complete-dict'
 let g:pydiction_menu_height = 20 
