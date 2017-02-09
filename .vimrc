@@ -38,10 +38,10 @@ map <F2> :A<cr>
 map <F3> :NERDTreeToggle<cr>
 nmap <F4> :vimgrep /\<<C-R>=expand("<cword>")<CR>\>/ **/*
 nmap <F5> :make<CR>
-map <F6> :cw<CR>
-map <F6><F6> :ccl<CR>
+"map <F6> :cw<CR>
+"map <F6><F6> :ccl<CR>
+map <F6> :cp<CR>
 map <F7> :cn<CR>
-map <F7><F7> :cp<CR>
 nmap <F8> :TlistToggle<CR>
 map <F12> :call Do_CsTag()<CR>
 map <F12><F2> :call Add_CsTag()<CR>
@@ -89,6 +89,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 Plugin 'junegunn/vim-easy-align'
 Plugin 'skywind3000/asyncrun.vim'
 "Plugin 'ervandew/supertab'
@@ -128,6 +129,22 @@ filetype plugin indent on
 
 " ack grep map
 nmap <F4> :Ack --cpp -w <C-R>=expand("<cword>")<CR>
+
+" YCM
+let g:ycm_confirm_extra_conf = 0 
+let g:ycm_error_symbol = '>>'
+let g:ycm_warning_symbol = '>*'
+let g:ycm_seed_identifiers_with_syntax = 1 
+let g:ycm_complete_in_comments = 1 
+let g:ycm_complete_in_strings = 1 
+"let g:ycm_cache_omnifunc = 0 
+nnoremap <leader>u :YcmCompleter GoToDeclaration<CR>
+nnoremap <leader>i :YcmCompleter GoToDefinition<CR>
+nnoremap <leader>o :YcmCompleter GoToInclude<CR>
+"nmap <F6> :YcmDiags<CR>
+let g:ycm_collect_identifiers_from_tags_files = 1
+let g:ycm_semantic_triggers = {} 
+let g:ycm_semantic_triggers.c = ['->', '.', ' ', '(', '[', '&',']']
 
 let g:pydiction_location = '~/.vim/after/ftplugin/pydiction-1.2/complete-dict'
 let g:pydiction_menu_height = 20 
@@ -181,13 +198,13 @@ let g:snips_email = 'iefcuxy@gmail.com'
 
 function! Do_CsTag()
 	if MySys() == 'linux'
-		silent! execute "!ctags -R --c-kinds=+p --c++-kinds=+px --fields=+iaS --extra=+q --languages=c,c++ --extra=+f '.'"
+		silent! execute "AsyncRun ctags -R --c-kinds=+p --c++-kinds=+px --fields=+iaS --extra=+q --languages=c,c++ --extra=+f '.'"
 	elseif MySys() == 'windows'
-		silent! execute "!ctags -R ."
+		silent! execute "AsyncRun ctags -R ."
 	endif
     if(executable('cscope') && has("cscope") )
-        silent! execute "!find -L `pwd` -name '*.h' -o -name '*.c' -o -name '*.cpp' -o -name '*.java' -o -name '*.cs' -o     -name '*.cxx' -o -name '*.hxx'> cscope.files -o -name '*.hpp' -o -name '*.py'"   
-        silent! execute "!cscope -bq"
+        silent! execute "AsyncRun find -L `pwd` -name '*.h' -o -name '*.c' -o -name '*.cpp' -o -name '*.java' -o -name '*.cs' -o     -name '*.cxx' -o -name '*.hxx'> cscope.files -o -name '*.hpp' -o -name '*.py'"   
+        silent! execute "AsyncRun cscope -bq"
 	endif
     silent! execute "call Add_CsTag()"
 endf
@@ -201,37 +218,6 @@ endf
 
 silent! execute "call Add_CsTag()"
 " ------定义增加tags和cscope函数
-
-" Find file in current directory and edit it.
-function! Find(name)
-  let l:list=system("find . -name '".a:name."' | perl -ne 'print \"$.\\t$_\"'")
-  let l:num=strlen(substitute(l:list, "[^\n]", "", "g"))
-  if l:num < 1
-    echo "'".a:name."' not found"
-    return
-  endif
-  if l:num != 1
-    echo l:list
-    let l:input=input("Which ? (CR=nothing)\n")
-    if strlen(l:input)==0
-      return
-    endif
-    if strlen(substitute(l:input, "[0-9]", "", "g"))>0
-      echo "Not a number"
-      return
-    endif
-    if l:input<1 || l:input>l:num
-      echo "Out of range"
-      return
-    endif
-    let l:line=matchstr("\n".l:list, "\n".l:input."\t[^\n]*")
-  else
-    let l:line=l:list
-  endif
-  let l:line=substitute(l:line, "^[^\t]*\t./", "", "")
-  execute ":e ".l:line
-endfunction
-command! -nargs=1 Find :call Find("<args>")
 
 " Platform
 function! MySys()
