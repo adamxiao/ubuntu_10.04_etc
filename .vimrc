@@ -107,6 +107,8 @@ Plugin 'skywind3000/asyncrun.vim'
 "Plugin 'tomtom/tlib_vim'
 "Plugin 'garbas/vim-snipmate'
 "Plugin 'honza/vim-snippets'
+"Plugin 'godlygeek/tabular'
+"Plugin 'plasticboy/vim-markdown'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -131,6 +133,7 @@ filetype plugin indent on
 nmap <F4> :Ack --cpp -w <C-R>=expand("<cword>")<CR>
 
 " YCM
+let g:ycm_key_invoke_completion = '<C-x><C-o>'
 let g:ycm_confirm_extra_conf = 0 
 let g:ycm_error_symbol = '>>'
 let g:ycm_warning_symbol = '>*'
@@ -145,13 +148,6 @@ nnoremap <leader>o :YcmCompleter GoToInclude<CR>
 let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_semantic_triggers = {} 
 let g:ycm_semantic_triggers.c = ['->', '.', ' ', '(', '[', '&',']']
-
-let g:pydiction_location = '~/.vim/after/ftplugin/pydiction-1.2/complete-dict'
-let g:pydiction_menu_height = 20 
-" python dict plugin
-
-set completeopt=longest,menu
-" onmi plugin config
 
 
 let g:SuperTabDefaultCompletionType = "context"
@@ -173,7 +169,7 @@ let g:alternateSearchPath = 'wdr:include,sfr:../src,sfr:../include,sfr:..'
 " a.vim plugin
 
 let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlPTag'
+let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = ''
 set wildignore+=*.o,*.so,*.svn,*.git
 let g:ctrlp_max_files = 20000
