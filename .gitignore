@@ -5,8 +5,7 @@
 *-
 # Ignore special log files
 /.vim/.netrwhist
-/.vim/systags
-/.vim/libtags
+/.vim/*tags
 /.vim/bundle/
 # Except this file
 # git config

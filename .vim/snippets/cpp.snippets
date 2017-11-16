@@ -59,7 +59,7 @@ snippet forvector
 snippet atoi
 	hydra::fs2u32(${1:str})${2}
 snippet itoa
-	hydra::CTrans::ITOS(${1:i})${2}
+	hydra::fi2s(${1:i}).s${2}
 snippet now
 	HYDRA_TSC_NOW()
 snippet op_less

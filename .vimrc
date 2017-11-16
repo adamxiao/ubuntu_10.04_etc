@@ -14,6 +14,9 @@ set tabstop=4
 set shiftwidth=4
 " indent config
 set hlsearch
+set incsearch
+set ignorecase
+set smartcase
 " search config
 set dir=~/tmp
 " swap file dir config
@@ -23,7 +26,7 @@ set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P>
 set foldmethod=manual
 set diffopt=filler,vertical
 set display=lastline
-
+colorscheme desert
 
 " file type detect
 au! BufRead,BufNewFile *.json set filetype=json
@@ -51,7 +54,7 @@ vnoremap <silent> * y/<C-R>=substitute(escape(@", '^$~.*\\/[]'), "\n", '\\n', 'g
 vnoremap <silent> # y?<C-R>=substitute(escape(@", '^$~.*\\/[]'), "\n", '\\n', 'g')<CR><CR>
 nmap <C-H> :%s/\<<C-R>=expand("<cword>")<CR>\>/
 vmap <C-H> y:%s/<C-R>=substitute(escape(@", '^$~.*\\/[]'), "\n", '\\n', 'g')<CR>/
-nmap ,a ggVG
+"nmap ,a ggVG
 map <S-q><S-q> :qa!<CR>
 nmap <Up> gk
 nmap <Down> gj
@@ -86,10 +89,11 @@ call vundle#begin()
 "call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
+Plugin 'junegunn/fzf.vim'
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'mileszs/ack.vim'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'rdnetto/YCM-Generator', { 'branch': 'stable'}
+"Plugin 'Valloric/YouCompleteMe'
+"Plugin 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 Plugin 'junegunn/vim-easy-align'
 Plugin 'skywind3000/asyncrun.vim'
 "Plugin 'ervandew/supertab'
@@ -130,25 +134,7 @@ filetype plugin indent on
 " set plugin on
 
 " ack grep map
-nmap <F4> :Ack --cpp -w <C-R>=expand("<cword>")<CR>
-
-" YCM
-let g:ycm_key_invoke_completion = '<C-x><C-o>'
-let g:ycm_confirm_extra_conf = 0 
-let g:ycm_error_symbol = '>>'
-let g:ycm_warning_symbol = '>*'
-let g:ycm_seed_identifiers_with_syntax = 1 
-let g:ycm_complete_in_comments = 1 
-let g:ycm_complete_in_strings = 1 
-"let g:ycm_cache_omnifunc = 0 
-nnoremap <leader>u :YcmCompleter GoToDeclaration<CR>
-nnoremap <leader>i :YcmCompleter GoToDefinition<CR>
-nnoremap <leader>o :YcmCompleter GoToInclude<CR>
-"nmap <F6> :YcmDiags<CR>
-let g:ycm_collect_identifiers_from_tags_files = 1
-let g:ycm_semantic_triggers = {} 
-let g:ycm_semantic_triggers.c = ['->', '.', ' ', '(', '[', '&',']']
-
+"nmap <F4> :Ack --cpp -w <C-R>=expand("<cword>")<CR>
 
 let g:SuperTabDefaultCompletionType = "context"
 " supertab plugin config

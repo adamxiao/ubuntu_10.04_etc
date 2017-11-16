@@ -110,7 +110,7 @@ function! CommentLine()
   if file_name =~ '\.cpp$' || file_name =~ '\.hpp$' || file_name =~ '\.java$' || file_name =~ '\.php[2345]\?$' || file_name =~ '\.C$'
     execute ":silent! normal 0i//\<ESC>\<down>^"
   " for .c or .h or .pc or .css files use //
-  elseif file_name =~ '\.c$' || file_name =~ '\.h$' || file_name =~ '\.pc$' || file_name =~ '\.css$' || file_name =~ '\.js$'
+  elseif file_name =~ '\.c$' || file_name =~ '\.h$' || file_name =~ '\.pc$' || file_name =~ '\.css$' || file_name =~ '\.js$' || file_name =~ '\.go$' || file_name =~ '\.proto$'
     execute ":silent! normal 0i//\<ESC>\<down>^"
   "for .ml or .mli files use (* *)
   elseif file_name =~ '\.ml$' || file_name =~ '\.mli$'
@@ -167,7 +167,7 @@ function! UnCommentLine()
     execute ":silent! normal :nohlsearch\<CR>:s/(\\*//\<CR>:nohlsearch\<CR>"
 	execute ":silent! normal :nohlsearch\<CR>:s/\\*)//\<CR>:nohlsearch\<CR>=="
   " for .c or .h or .pc or .css files use /* */
-  elseif file_name =~ '\.c$' || file_name =~ '\.h$' || file_name =~ '\.pc$' || file_name =~ '\.css$' || file_name =~ '\.js$'
+  elseif file_name =~ '\.c$' || file_name =~ '\.h$' || file_name =~ '\.pc$' || file_name =~ '\.css$' || file_name =~ '\.js$' || file_name =~ '\.go$' || file_name =~ '\.proto$'
     execute ":silent! normal :nohlsearch\<CR>:s/\\/\\///\<CR>:nohlsearch\<CR>=="
   " for .vim files use "
   elseif file_name =~ '\.vim$' || file_name =~ '\.vimrc$'
@@ -208,7 +208,7 @@ function! RangeCommentLine()
   if file_name =~ '\.cpp$' || file_name =~ '\.hpp$' || file_name =~ '\.java$' || file_name =~ '\.php[2345]\?$' || file_name =~ '\.C$'
     execute ":silent! normal :s/^/\\/\\/\\0/\<CR>:nohlsearch<CR>=="
   " for .c or .h or .pc or .css files use //
-  elseif file_name =~ '\.c$' || file_name =~ '\.h$' || file_name =~ '\.pc$' || file_name =~ '\.css$' || file_name =~ '\.js$'
+  elseif file_name =~ '\.c$' || file_name =~ '\.h$' || file_name =~ '\.pc$' || file_name =~ '\.css$' || file_name =~ '\.js$' || file_name =~ '\.go$' || file_name =~ '\.proto$'
     execute ":silent! normal :s/^/\\/\\/\\0/\<CR>:nohlsearch<CR>=="
   " .html,.xml,.xthml,.htm
   elseif file_name =~ '\.html$' || file_name =~ '\.htm$' || file_name =~ '\.xml$' || file_name =~ '\.xhtml$' 
@@ -261,7 +261,7 @@ function! RangeUnCommentLine()
   if file_name =~ '\.cpp$' || file_name =~ '\.hpp$' || file_name =~ '\.java$' || file_name =~ '\.php[2345]\?$' || file_name =~ '\.C$'
     execute ":silent! normal :s/\\/\\///\<CR>:nohlsearch\<CR>=="
   " for .c or .h or .pc or .css files use /* */
-  elseif file_name =~ '\.c$' || file_name =~ '\.h$' || file_name =~ '\.pc$' || file_name =~ '\.css$' || file_name =~ '\.js$'
+  elseif file_name =~ '\.c$' || file_name =~ '\.h$' || file_name =~ '\.pc$' || file_name =~ '\.css$' || file_name =~ '\.js$' || file_name =~ '\.go$' || file_name =~ '\.proto$'
     execute ":silent! normal :s/\\/\\///\<CR>:nohlsearch\<CR>=="
   " for .vim files use " 
   elseif file_name =~ '\.vim$' || file_name =~ '\.vimrc$'
