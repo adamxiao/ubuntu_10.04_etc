@@ -104,3 +104,5 @@ export SVN_EDITOR=vim
 # extra path lib
 export PATH=/home/user_00/local/bin:/usr/games/:/home/user_00/adamxiao/test_usr/bin/:/home/user_00/bin:$PATH
 export LD_LIBRARY_PATH=/home/user_00/adamxiao/test_usr/lib
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

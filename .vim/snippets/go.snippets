@@ -252,3 +252,16 @@ snippet ja
 	func (p *$1) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&struct{ *$1Alias }{(*$1Alias)(p)})
 	}
+snippet ip2int
+	func ip2int(ip net.IP) uint32 {
+		if len(ip) == 16 {
+			return binary.BigEndian.Uint32(ip[12:16])
+		}
+		return binary.BigEndian.Uint32(ip)
+	}
+snippet int2ip
+	func int2ip(nn uint32) net.IP {
+		ip := make(net.IP, 4)
+		binary.BigEndian.PutUint32(ip, nn)
+		return ip
+	}

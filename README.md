@@ -42,3 +42,16 @@ ctags -R -f ~/.vim/systags --c-kinds=+p --c++-kinds=+px --fields=+iaS --extra=+q
 [push]
 	default = simple
 ```
+
+## 4. ssh配置
+```
+# connect the same server quickly
+ControlMaster auto
+ControlPath /tmp/ssh_mux_%h_%p_%r
+
+Host xxx
+    HostName www.xxx.com
+    User xxx
+    Port xxx
+    IdentityFile xxx
+```

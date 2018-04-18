@@ -18,7 +18,7 @@ set incsearch
 set ignorecase
 set smartcase
 " search config
-set dir=~/tmp
+set dir=~/.vim_swap
 " swap file dir config
 set laststatus=2
 set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P>
@@ -45,7 +45,8 @@ nmap <F5> :make<CR>
 "map <F6><F6> :ccl<CR>
 map <F6> :cp<CR>
 map <F7> :cn<CR>
-nmap <F8> :TlistToggle<CR>
+" nmap <F8> :TlistToggle<CR>
+nmap <F8> :TagbarToggle<CR>
 map <F12> :call Do_CsTag()<CR>
 map <F12><F2> :call Add_CsTag()<CR>
 " basic key mapping
@@ -73,7 +74,8 @@ nmap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>
 
 
 set path+=**/**
-set tags=tags;,~/.vim/systags,~/.vim/libtags
+"set tags=tags;,~/.vim/systags,~/.vim/libtags
+set tags=tags;
 " taglist config
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -83,15 +85,18 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
+set rtp+=~/.fzf
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
+Plugin 'majutsushi/tagbar'
 Plugin 'junegunn/fzf.vim'
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'mileszs/ack.vim'
+Plugin 'mhinz/vim-grepper'
 "Plugin 'Valloric/YouCompleteMe'
 "Plugin 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 Plugin 'junegunn/vim-easy-align'
@@ -174,6 +179,34 @@ let g:snips_author = 'Adam Xiao'
 let g:snips_authorref = 'iefcu'
 let g:snips_email = 'iefcuxy@gmail.com'
 " snippet plugin
+
+let g:tagbar_type_go = {  
+    \ 'ctagstype' : 'go',  
+    \ 'kinds'     : [  
+        \ 'p:package',  
+        \ 'i:imports:1',  
+        \ 'c:constants',  
+        \ 'v:variables',  
+        \ 't:types',  
+        \ 'n:interfaces',  
+        \ 'w:fields',  
+        \ 'e:embedded',  
+        \ 'm:methods',  
+        \ 'r:constructor',  
+        \ 'f:functions'  
+    \ ],  
+    \ 'sro' : '.',  
+    \ 'kind2scope' : {  
+        \ 't' : 'ctype',  
+        \ 'n' : 'ntype'  
+    \ },  
+    \ 'scope2kind' : {  
+        \ 'ctype' : 't',  
+        \ 'ntype' : 'n'  
+    \ },  
+    \ 'ctagsbin'  : 'gotags',  
+    \ 'ctagsargs' : '-sort -silent'  
+\ }
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ------ function definition
