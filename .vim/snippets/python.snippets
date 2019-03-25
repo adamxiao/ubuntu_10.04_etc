@@ -85,3 +85,10 @@ snippet ifmain
 # __magic__
 snippet _
 	__${1:init}__${2}
+snippet main
+	def main():
+		"""docstring for main"""
+		${1:pass}
+
+	if __name__ == '__main__':
+		main()
