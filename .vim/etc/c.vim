@@ -1,7 +1,7 @@
 " Intenting
 setlocal noexpandtab                         " use tabs, not spaces
 setlocal tabstop=4                           " tabstops of 8
-setlocal shiftwidth=4                        " indents of 8
+setlocal shiftwidth=0                        " indents of 8
 "setlocal textwidth=78                        " screen in 80 columns wide, wrap at 78
 
 setlocal autoindent smartindent              " turn on auto/smart indenting

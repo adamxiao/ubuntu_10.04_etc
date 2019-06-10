@@ -11,7 +11,12 @@ set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 set fileencoding=utf-8
 " encoding config
 set tabstop=4
-set shiftwidth=4
+set shiftwidth=0
+let g:python_recommended_style = 0
+set list
+set listchars=tab:▸-
+":%retab!
+"set listchars=tab:▸-,eol:↩︎,trail:-
 " indent config
 set hlsearch
 set incsearch
@@ -34,7 +39,7 @@ au BufRead,BufNewFile *.txt setlocal ft=txt
 
 " shortcut command 
 command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
-	 	\ | wincmd p | diffthis
+		\ | wincmd p | diffthis
 
 " key mapping
 map <F2> :A<cr>
@@ -85,6 +90,7 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
+" https://github.com/VundleVim/Vundle.vim.git
 set rtp+=~/.fzf
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -92,6 +98,13 @@ call vundle#begin()
 "call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
+"Plugin 'inkarkat/vim-ingo-library'
+"Plugin 'inkarkat/vim-IndentConsistencyCop'
+Plugin 'tpope/vim-sleuth'
+"Plugin 'luochen1990/indent-detector.vim' " 不行, 乱报错
+"Plugin 'nathanaelkane/vim-indent-guides' " 不行，报错
+Plugin 'Blackrush/vim-gocode'
+Plugin 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plugin 'majutsushi/tagbar'
 Plugin 'junegunn/fzf.vim'
 Plugin 'VundleVim/Vundle.vim'

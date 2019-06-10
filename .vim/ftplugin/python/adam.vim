@@ -6,4 +6,5 @@ if exists("b:adam_did_python_ftplugin")
 endif
 let b:adam_did_python_ftplugin = 1
 
-setlocal expandtab shiftwidth=2 tabstop=2 smarttab softtabstop=2
+"setlocal expandtab shiftwidth=2 tabstop=2 smarttab softtabstop=2
+setlocal tabstop=2
