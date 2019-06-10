@@ -105,4 +105,8 @@ export SVN_EDITOR=vim
 export PATH=/home/user_00/local/bin:/usr/games/:/home/user_00/adamxiao/test_usr/bin/:/home/user_00/bin:$PATH
 export LD_LIBRARY_PATH=/home/user_00/adamxiao/test_usr/lib
 
+# 加入$HOME/usr/目录下的软件
+adam_local=`echo $HOME/usr/*/bin | sed 's/ /:/g'`
+export PATH=$HOME/usr/bin:$adam_local:$PATH
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
