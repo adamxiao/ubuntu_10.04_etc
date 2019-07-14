@@ -98,6 +98,7 @@ call vundle#begin()
 "call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
+Plugin 'scrooloose/nerdcommenter'
 "Plugin 'inkarkat/vim-ingo-library'
 "Plugin 'inkarkat/vim-IndentConsistencyCop'
 Plugin 'tpope/vim-sleuth'
