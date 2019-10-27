@@ -6,14 +6,14 @@ syn on
 set langmenu=zh_CN.UTF-8
 set encoding=UTF-8
 set termencoding=UTF-8
-language message zh_CN.UTF-8
+"language message zh_CN.UTF-8
 set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 set fileencoding=utf-8
 " encoding config
 set tabstop=4
 set shiftwidth=0
 let g:python_recommended_style = 0
-set list
+"set list
 set listchars=tab:▸-
 ":%retab!
 "set listchars=tab:▸-,eol:↩︎,trail:-
