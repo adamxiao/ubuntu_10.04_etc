@@ -104,14 +104,14 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-sleuth'
 "Plugin 'luochen1990/indent-detector.vim' " 不行, 乱报错
 "Plugin 'nathanaelkane/vim-indent-guides' " 不行，报错
-Plugin 'Blackrush/vim-gocode'
-Plugin 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+"Plugin 'Blackrush/vim-gocode'
+"Plugin 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plugin 'majutsushi/tagbar'
 Plugin 'junegunn/fzf.vim'
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'mileszs/ack.vim'
-Plugin 'mhinz/vim-grepper'
-"Plugin 'Valloric/YouCompleteMe'
+"Plugin 'mileszs/ack.vim'
+"Plugin 'mhinz/vim-grepper'
+Plugin 'Valloric/YouCompleteMe'
 "Plugin 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 Plugin 'junegunn/vim-easy-align'
 Plugin 'skywind3000/asyncrun.vim'
@@ -154,6 +154,13 @@ filetype plugin indent on
 
 " ack grep map
 "nmap <F4> :Ack --cpp -w <C-R>=expand("<cword>")<CR>
+
+let g:ycm_global_ycm_extra_conf='~/.vim/bundle/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
+" refer https://www.cnblogs.com/chris-cp/p/4589249.html                                              
+nnoremap <leader>gl :YcmCompleter GoToDeclaration<CR>
+nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
+nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
+" YCM plugin
 
 let g:SuperTabDefaultCompletionType = "context"
 " supertab plugin config
