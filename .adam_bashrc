@@ -15,6 +15,6 @@ export LD_LIBRARY_PATH=/usr/local/lib
 [[ -s ~/.bashrc.local ]] && . ~/.bashrc.local
 [[ -s ~/.bash_aliases ]] && . ~/.bash_aliases
 
-# 加入$HOME/usr/目录下的软件
-adam_local=`echo $HOME/usr/*/bin | sed 's/ /:/g'`
-export PATH=$HOME/usr/bin:$adam_local:$PATH
+## 加入/opt/*/bin
+#adam_local=`echo /opt/*/bin | sed 's/ /:/g'`
+#export PATH=$adam_local:$PATH
