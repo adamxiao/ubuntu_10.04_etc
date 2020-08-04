@@ -49,6 +49,9 @@ ctags -R -f ~/.vim/systags --c-kinds=+p --c++-kinds=+px --fields=+iaS --extra=+q
 ControlMaster auto
 ControlPath /tmp/ssh_mux_%h_%p_%r
 
+StrictHostKeyChecking no
+UserKnownHostsFile /dev/null
+
 Host xxx
     HostName www.xxx.com
     User xxx
