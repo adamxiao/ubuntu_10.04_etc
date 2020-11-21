@@ -28,10 +28,10 @@ ctags -R -f ~/.vim/systags --c-kinds=+p --c++-kinds=+px --fields=+iaS --extra=+q
 	name = Adam Xiao
 	email = iefcuxy@gmail.com
 [alias]
-	st = !git status -s
+	st = !git status -s --ignore-submodules
 	co = !git checkout
 	ci = !git commit
-	di = !git difftool -t vimdiff
+	di = !git difftool -t vimdiff --ignore-submodules
 ```
 可能额外需要添加代理配置
 ```
