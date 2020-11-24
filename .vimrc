@@ -15,6 +15,7 @@ set shiftwidth=0
 let g:python_recommended_style = 0
 "set list
 set listchars=tab:▸-
+set modeline
 ":%retab!
 "set listchars=tab:▸-,eol:↩︎,trail:-
 " indent config
@@ -86,7 +87,7 @@ set tags=tags;
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ------ plugin config
 
-set nocompatible              " be iMproved, required
+"set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
@@ -101,7 +102,7 @@ call vundle#begin()
 Plugin 'scrooloose/nerdcommenter'
 "Plugin 'inkarkat/vim-ingo-library'
 "Plugin 'inkarkat/vim-IndentConsistencyCop'
-Plugin 'tpope/vim-sleuth'
+"Plugin 'tpope/vim-sleuth'
 "Plugin 'luochen1990/indent-detector.vim' " 不行, 乱报错
 "Plugin 'nathanaelkane/vim-indent-guides' " 不行，报错
 "Plugin 'Blackrush/vim-gocode'
