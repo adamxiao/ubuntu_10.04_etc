@@ -156,8 +156,16 @@ filetype plugin indent on
 " ack grep map
 "nmap <F4> :Ack --cpp -w <C-R>=expand("<cword>")<CR>
 
+let g:ycm_filetype_whitelist = {
+			\ "c":1,
+			\ "cpp":1, 
+			\ }
 let g:ycm_use_clangd = 0
 let g:ycm_global_ycm_extra_conf='~/.vim/bundle/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
+let g:ycm_show_diagnostics_ui = 0
+" disable syntax checker
+let g:ycm_confirm_extra_conf = 0
+" disable confirm extra ycm conf loaded
 " refer https://www.cnblogs.com/chris-cp/p/4589249.html                                              
 nnoremap <leader>gl :YcmCompleter GoToDeclaration<CR>
 nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
