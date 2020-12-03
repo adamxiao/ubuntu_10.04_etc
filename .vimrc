@@ -112,6 +112,7 @@ Plugin 'junegunn/fzf.vim'
 Plugin 'VundleVim/Vundle.vim'
 "Plugin 'mileszs/ack.vim'
 "Plugin 'mhinz/vim-grepper'
+Plugin 'dense-analysis/ale'
 Plugin 'Valloric/YouCompleteMe'
 "Plugin 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 Plugin 'junegunn/vim-easy-align'
@@ -171,6 +172,13 @@ nnoremap <leader>gl :YcmCompleter GoToDeclaration<CR>
 nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
 nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
 " YCM plugin
+
+let g:ale_cpp_cpplint_options = "--linelength=120 --filter=-copyright,-legal,-whitespace"
+let g:ale_cpp_cppcheck_options = ''
+let g:ale_lint_on_enter = 0
+let g:ale_lint_on_save = 1
+" ale plugin
+
 
 let g:SuperTabDefaultCompletionType = "context"
 " supertab plugin config
