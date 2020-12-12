@@ -24,6 +24,7 @@ setlocal expandtab                      " use spaces replace tabs
 setlocal tabstop=4                      " tabstops of 4
 setlocal shiftwidth=0                        " indents of 4
 "setlocal textwidth=78                        " screen in 80 columns wide, wrap at 78
+setlocal list
 
 setlocal autoindent smartindent              " turn on auto/smart indenting
 setlocal smarttab                            " make <tab> and <backspace> smarter
