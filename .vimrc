@@ -99,6 +99,9 @@ call vundle#begin()
 "call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
+Plugin 'zivyangll/git-blame.vim'
+Plugin 'airblade/vim-gitgutter'
+" git plugins
 Plugin 'scrooloose/nerdcommenter'
 "Plugin 'inkarkat/vim-ingo-library'
 "Plugin 'inkarkat/vim-IndentConsistencyCop'
@@ -156,6 +159,9 @@ filetype plugin indent on
 
 " ack grep map
 "nmap <F4> :Ack --cpp -w <C-R>=expand("<cword>")<CR>
+
+nnoremap <Leader>s :<C-u>call gitblame#echo()<CR>
+" git-blame plugin conf
 
 let g:ycm_filetype_whitelist = {
 			\ "c":1,
