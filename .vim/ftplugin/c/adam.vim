@@ -33,7 +33,7 @@ setlocal backspace=eol,start,indent          " allow backspacing over indent, eo
 " C formatting
 setlocal formatoptions=tcqlron
 setlocal cinoptions=:0,l1,t0,g0
-let &l:formatprg='astyle --mode=c --style=k/r -t'
+let &l:formatprg='astyle --mode=c --style=k/r 2>/dev/null'
 "let &l:equalprg='astyle --mode=c --style=k/r -t'
 
 " Folds

@@ -160,6 +160,12 @@ filetype plugin indent on
 " ack grep map
 "nmap <F4> :Ack --cpp -w <C-R>=expand("<cword>")<CR>
 
+if has('python')
+  map <C-I> :pyf /usr/share/vim/addons/syntax/clang-format.py<cr>
+elseif has('python3')
+  map <C-I> :py3f /usr/share/vim/addons/syntax/clang-format.py<cr>
+endif
+
 nnoremap <Leader>s :<C-u>call gitblame#echo()<CR>
 " git-blame plugin conf
 
