@@ -51,7 +51,6 @@ nmap <F4> :vimgrep /\<<C-R>=expand("<cword>")<CR>\>/ **/*
 "map <F6><F6> :ccl<CR>
 map <F6> :cp<CR>
 map <F7> :cn<CR>
-" nmap <F8> :TlistToggle<CR>
 nmap <F8> :TagbarToggle<CR>
 map <F12> :call Do_CsTag()<CR>
 map <F12><F12> :call Add_CsTag()<CR>
@@ -200,11 +199,6 @@ let g:ale_linters = {'cpp': ['cppcheck', 'cpplint']}
 
 let g:SuperTabDefaultCompletionType = "context"
 " supertab plugin config
-
-let Tlist_Inc_Winwidth=0
-let Tlist_Use_Right_Window=1
-let Tlist_File_Fold_Auto_Close=1
-" TagList plugin config
 
 
 let g:alternateNoDefaultAlternate = 1
