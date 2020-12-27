@@ -43,10 +43,10 @@ command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
 		\ | wincmd p | diffthis
 
 " key mapping
-map <F2> :A<cr>
+"map <F2> :A<cr>
 map <F3> :NERDTreeToggle<cr>
 nmap <F4> :vimgrep /\<<C-R>=expand("<cword>")<CR>\>/ **/*
-nmap <F5> :make<CR>
+"nmap <F5> :make<CR>
 "map <F6> :cw<CR>
 "map <F6><F6> :ccl<CR>
 map <F6> :cp<CR>
@@ -98,45 +98,47 @@ call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
+Plugin 'VundleVim/Vundle.vim'
 " let Vundle manage Vundle, required
 Plugin 'zivyangll/git-blame.vim'
 Plugin 'airblade/vim-gitgutter'
+"Plugin 'vim-scripts/vcscommand.vim'
 " git plugins
 Plugin 'scrooloose/nerdcommenter'
-"Plugin 'inkarkat/vim-ingo-library'
-"Plugin 'inkarkat/vim-IndentConsistencyCop'
-"Plugin 'tpope/vim-sleuth'
-"Plugin 'luochen1990/indent-detector.vim' " 不行, 乱报错
-"Plugin 'nathanaelkane/vim-indent-guides' " 不行，报错
-"Plugin 'Blackrush/vim-gocode'
-"Plugin 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+" comment quickly
 Plugin 'majutsushi/tagbar'
 Plugin 'junegunn/fzf.vim'
-Plugin 'VundleVim/Vundle.vim'
-"Plugin 'mileszs/ack.vim'
-"Plugin 'mhinz/vim-grepper'
+" file(tag) fuzzy search
 Plugin 'dense-analysis/ale'
+" code static analysis
 Plugin 'Valloric/YouCompleteMe'
 "Plugin 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 Plugin 'junegunn/vim-easy-align'
-Plugin 'skywind3000/asyncrun.vim'
-"Plugin 'ervandew/supertab'
-"Plugin 'scrooloose/nerdtree'
-"Plugin 'vim-scripts/a.vim'
-"Plugin 'jlanzarotta/bufexplorer'
-"Plugin 'ctrlpvim/ctrlp.vim'
-"Plugin 'mbbill/fencview'
-"Plugin 'Kris2k/matchit'
-"Plugin 'dimasg/vim-mark'
-"Plugin 'vim-scripts/taglist.vim'
-"Plugin 'vim-scripts/vcscommand.vim'
-"" snippets
-"Plugin 'MarcWeber/vim-addon-mw-utils'
-"Plugin 'tomtom/tlib_vim'
-"Plugin 'garbas/vim-snipmate'
-"Plugin 'honza/vim-snippets'
 "Plugin 'godlygeek/tabular'
-"Plugin 'plasticboy/vim-markdown'
+" code easy align
+Plugin 'skywind3000/asyncrun.vim'
+" async plugin
+
+Plugin 'vim-airline/vim-airline'
+" status plugin
+
+" TODO: plugin update
+"Plugin 'scrooloose/nerdtree'
+"" directory(file) tree
+"Plugin 'vim-scripts/a.vim'
+"" source header switch
+"Plugin 'jlanzarotta/bufexplorer'
+"" buffer files switch
+"Plugin 'mbbill/fencview'
+"" file encodings detect
+"Plugin 'honza/vim-snippets'
+"" code snippets
+"Plugin 'vim-scripts/vcscommand.vim'
+" git code manager
+"Plugin 'Kris2k/matchit'
+" match % out of date, 用的较少了
+"Plugin 'dimasg/vim-mark'
+" highlight keyword
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -159,6 +161,9 @@ filetype plugin indent on
 
 " ack grep map
 "nmap <F4> :Ack --cpp -w <C-R>=expand("<cword>")<CR>
+
+nmap <C-P> :Files<CR>
+" file(tag) fuzzy search
 
 if has('python')
   map <C-I> :pyf /usr/share/vim/addons/syntax/clang-format.py<cr>
@@ -211,7 +216,8 @@ let g:alternateRelativeFiles = 1
 let g:alternateSearchPath = 'wdr:include,sfr:../src,sfr:../include,sfr:..'
 " a.vim plugin
 
-let g:ctrlp_map = '<c-p>'
+"let g:ctrlp_map = '<c-p>'
+let g:ctrlp_map = ''
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = ''
 set wildignore+=*.o,*.so,*.svn,*.git
