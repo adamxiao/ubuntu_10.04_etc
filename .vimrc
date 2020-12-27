@@ -201,8 +201,6 @@ let g:ale_linters = {'cpp': ['cppcheck', 'cpplint']}
 let g:SuperTabDefaultCompletionType = "context"
 " supertab plugin config
 
-let g:CommandTMaxHeight = 20
-
 let Tlist_Inc_Winwidth=0
 let Tlist_Use_Right_Window=1
 let Tlist_File_Fold_Auto_Close=1
