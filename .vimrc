@@ -43,12 +43,8 @@ command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
 		\ | wincmd p | diffthis
 
 " key mapping
-"map <F2> :A<cr>
 map <F3> :NERDTreeToggle<cr>
 nmap <F4> :vimgrep /\<<C-R>=expand("<cword>")<CR>\>/ **/*
-"nmap <F5> :make<CR>
-"map <F6> :cw<CR>
-"map <F6><F6> :ccl<CR>
 map <F6> :cp<CR>
 map <F7> :cn<CR>
 nmap <F8> :TagbarToggle<CR>
@@ -197,14 +193,8 @@ let g:ale_linters = {'cpp': ['cppcheck', 'cpplint']}
 " ale plugin
 
 
-let g:SuperTabDefaultCompletionType = "context"
-" supertab plugin config
-
-
 let g:alternateNoDefaultAlternate = 1
 let g:alternateRelativeFiles = 1
-"let g:alternateSearchPath = 'reg:#src/\([^/]*\)#src/include/\1##,reg:#include/\([^/]*\)#\1##,reg:#crmframe/\([^/]*\)#include/\1##,reg:#include/\([^/]*\)#crmframe/\1##'
-"let g:alternateSearchPath = 'reg:#./#./include##,reg:reg:#./include#./##,reg'
 let g:alternateSearchPath = 'wdr:include,sfr:../src,sfr:../include,sfr:..'
 " a.vim plugin
 
@@ -276,107 +266,8 @@ function! MySys()
   endif
 endfunction
 
-"nnoremap <c-]> :call <SID>JumpToTag()<cr>
-nnoremap <c-]> :call <SID>Tag()<cr>
 
-"function! s:JumpToTag()
-function! s:Tag()
-  " try to find a word under the cursor
-  let current_word = expand("<cword>")
-
-  " check if there is one
-  if current_word == ''
-    echomsg "No word under the cursor"
-    return
-  endif
-
-  " find all tags for the given word
-  let tags = taglist('^'.current_word.'$')
-
-  " if no tags are found, bail out
-  if empty(tags)
-    echomsg "No tags found for: ".current_word
-    return
-  endif
-
-  let new_tags = []
-  let index = 1
-  for entry in tags
-    call add(new_tags, {
-          \ 'id':  index,
-          \ 'filename': entry['filename'],
-          \ 'kind': entry['kind'],
-          \ })
-    let index = index + 1
-  endfor
-
-  " take the first tag, or implement some more complicated logic here
-  let new_tags = sort(new_tags, 'TagPriority')
-  let choose_index = new_tags[0].id
-
-  exec ':'.choose_index.'tag '.current_word
-endfunction
-
-function! TagPriority(i1, i2)
-  let bufdir = expand('%:p:h')
-  let file1 = fnamemodify( a:i1['filename'], ':p:h')
-  let file2 = fnamemodify( a:i2['filename'], ':p:h')
-  let file_priorityl1 = 0
-  let file_priorityl2 = 0
-
-  if a:i1['filename'] == expand('%:p')
-    file_priorityl1 = 0
-  elseif file1 == bufdir
-    let file_priorityl1 = 1
-  else
-    let file_priorityl1 = 2
-  endif
-
-  if a:i2['filename'] == expand('%:p')
-    let file_priorityl2 = 0
-  elseif file2 == bufdir
-    let file_priorityl2 = 1
-  else
-    let file_priorityl2 = 2
-  endif
-
-  " sort by file path priority
-  "return file_priorityl1 == file_priorityl2 ? 0 : file_priorityl1 > file_priorityl2 ? 1 : -1
-  if file_priorityl1 != file_priorityl2
-    return file_priorityl1 > file_priorityl2 ? 1 : -1
-  endif
-
-  " XXX: sort by kind priority ?
-  "let kind_priority = ['c', 't', 'p', 'f']
-  return a:i1['kind'] == a:i2['kind'] ? 0 : a:i1['kind'] > a:i2['kind'] ? 1 : -1
-endfunc
-
-function! s:Tselect(...)
-  let tagname = (a:0 > 0)? a:1 : expand('<cword>')
-  let tags = taglist("^". tagname . "$")
-  let tags = sort(tags, 'TagPriority')
-
-  " Prepare them for inserting in the quickfix window
-  let qf_taglist = []
-  for entry in tags
-    call add(qf_taglist, {
-          \ 'pattern':  entry['cmd'],
-          \ 'filename': entry['filename'],
-          \ })
-  endfor
-
-  " Place the tags in the quickfix window, if possible
-  if len(qf_taglist) > 0
-    call setqflist(qf_taglist)
-    copen
-  else
-    echo "No tags found for ".a:name
-  endif
-endfunc
-
-command! -nargs=? Tselect call s:Tselect(<f-args>)
-nnoremap <leader>q :call <SID>Tselect()<cr>
-
+" FIXME: vimdiff should't restore last position
 " restore last position
 autocmd BufReadPost *
     \ if line("'\"") > 1 && line("'\"") <= line("$") |
