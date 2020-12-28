@@ -97,7 +97,7 @@ Plugin 'VundleVim/Vundle.vim'
 " let Vundle manage Vundle, required
 Plugin 'zivyangll/git-blame.vim'
 Plugin 'airblade/vim-gitgutter'
-"Plugin 'vim-scripts/vcscommand.vim'
+Plugin 'vim-scripts/vcscommand.vim'
 " git plugins
 Plugin 'scrooloose/nerdcommenter'
 " comment quickly
@@ -128,8 +128,6 @@ Plugin 'vim-airline/vim-airline'
 "" file encodings detect
 "Plugin 'honza/vim-snippets'
 "" code snippets
-"Plugin 'vim-scripts/vcscommand.vim'
-" git code manager
 "Plugin 'Kris2k/matchit'
 " match % out of date, 用的较少了
 "Plugin 'dimasg/vim-mark'
