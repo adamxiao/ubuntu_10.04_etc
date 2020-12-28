@@ -113,13 +113,14 @@ Plugin 'junegunn/vim-easy-align'
 " code easy align
 Plugin 'skywind3000/asyncrun.vim'
 " async plugin
+Plugin 'scrooloose/nerdtree'
+" directory(file) tree
+
 
 Plugin 'vim-airline/vim-airline'
 " status plugin
 
 " TODO: plugin update
-"Plugin 'scrooloose/nerdtree'
-"" directory(file) tree
 "Plugin 'vim-scripts/a.vim'
 "" source header switch
 "Plugin 'jlanzarotta/bufexplorer'
