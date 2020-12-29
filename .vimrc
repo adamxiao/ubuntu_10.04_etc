@@ -120,18 +120,17 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'vim-airline/vim-airline'
 " status plugin
 
-" TODO: plugin update
-"Plugin 'vim-scripts/a.vim'
+Plugin 'vim-scripts/a.vim'
 "" source header switch
-"Plugin 'jlanzarotta/bufexplorer'
+Plugin 'jlanzarotta/bufexplorer'
 "" buffer files switch
-"Plugin 'mbbill/fencview'
+Plugin 'mbbill/fencview'
 "" file encodings detect
 "Plugin 'honza/vim-snippets'
 "" code snippets
-"Plugin 'Kris2k/matchit'
+Plugin 'Kris2k/matchit'
 " match % out of date, 用的较少了
-"Plugin 'dimasg/vim-mark'
+Plugin 'dimasg/vim-mark'
 " highlight keyword
 
 " All of your Plugins must be added before the following line
