@@ -126,7 +126,10 @@ Plugin 'jlanzarotta/bufexplorer'
 "" buffer files switch
 Plugin 'mbbill/fencview'
 "" file encodings detect
-"Plugin 'honza/vim-snippets'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
 "" code snippets
 Plugin 'Kris2k/matchit'
 " match % out of date, 用的较少了
@@ -199,6 +202,8 @@ let g:alternateSearchPath = 'wdr:include,sfr:../src,sfr:../include,sfr:..'
 let g:snips_author = 'Adam Xiao'
 let g:snips_authorref = 'iefcu'
 let g:snips_email = 'iefcuxy@gmail.com'
+imap <C-J> <Plug>snipMateNextOrTrigger
+smap <C-J> <Plug>snipMateNextOrTrigger
 " snippet plugin
 
 let g:tagbar_type_go = {  
