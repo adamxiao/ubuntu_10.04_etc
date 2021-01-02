@@ -1,0 +1,6 @@
+" 插件管理
+source ~/.vim/plug.vim
+" 插件配置
+source ~/.vim/plug_conf.vim
+" 其他基本配置
+source ~/.vim/basic.vim
