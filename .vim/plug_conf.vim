@@ -1,4 +1,4 @@
-nmap <C-P> :Files<CR>
+nmap <Leader>t :Files<CR>
 " file(tag) fuzzy search
 
 if has('python')
