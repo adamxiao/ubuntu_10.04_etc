@@ -10,7 +10,9 @@ mkdir -p ${DESTINATION}
 
 # Find __ARCHIVE__ maker, read archive content and decompress it
 ARCHIVE=$(awk '/^__ARCHIVE__/ {print NR + 1; exit 0; }' "${0}")
-tail -n+${ARCHIVE} "${0}" | tar xpJv -C ${DESTINATION}
+tail -n+${ARCHIVE} "${0}" | tar xpJv -C $HOME
+# generate data.tar.xz
+# cd && tar -cJf /tmp/data.tar.xz .fzf .vim
 
 # Put your logic here (if you need)
 mkdir -p $HOME/.vim_swap
