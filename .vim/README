@@ -1,26 +1,62 @@
-# 我使用的插件
-command-t-1.4 => 文件搜索插件(基于ruby,速度很快,算法好很精确, 但是只能模糊查找)
-ctrlp-1.78 => 文件(可以精确和模糊, 还可以仅仅查找文件名), MRU文件, tag搜索
+# vim配置说明
 
-# 备用插件, 可能也是好插件
-fugitive.vim => A Git wrapper so awesome, it should be illegal 
-Trinity => 类似sourceinsight的源码预览窗口
-clang complete => Use of Clang for completing C, C++, Objective-C and Objective-C++ 
+## 一. 现有插件
 
-# already removed
-pydiction => python补全插件
-bash-support => bash编写插件, 包括检查语法和运行bash脚本
-cvim(c-support) => c,cpp编写插件, 包括编译链接运行程序
-	=> 我选择仅仅保留一键编译运行程序的部分(或者也没必要?写一个简单的makefile就行了?)
-SQLUtilities-4.0 => sql语句格式化插件
-dbext-1300 => vim执行sql语句插件
-code_complete-2.9 => 函数函数补全, 不实用, 几乎不用
-Align => 代码对齐插件，几乎不用, 而且好像有更好的一个替代插件
+看，写的提升
 
-TODO: 更新自己的插件使用介绍
+1.模糊搜索
+fzf, fzf.vim, ctrlp
+强烈推荐, 模糊搜索文件名，符号名, 快速grep
 
-#在当前目录建立tags
+2. 索引插件
+tagbar, NERDTree
+简单索引, 目录树，没啥好说的
+
+3. 自动补全
+YCM
+好用，但是安装复杂，配置也麻烦
+
+4. git集成
+vim-gitgutter, vcscommand.vim, git-blame.vim
+vsccommand插件用久了，习惯了
+git-blame快速插件当前行的最后一个改动者
+vim-gitgutter比较多的功能，我主要用它的自动展示改动点
+
+5. 编程语言
+cvim(我只保留了其中一小部分功能)
+vim-snipmate => 代码片段,不错
+
+0. 其他
+配色使用gruvbox(不用管终端配色，颜色也柔和)
+nerdcommenter => 快速注释
+vim-easy-align => 代码对齐
+airline => 状态栏展示
+bufexplorer => 快速切换buffer
+vim-mark => 关键字高亮
+
+## 二. 使用介绍
+
+看代码
+1. 配色使用gruvbox配色, 终端vim也展示得比较好, 文字都能分辨清晰
+2. 把tab键展示成可见的符号, 拒绝tab,space混用缩进
+3. 高亮智能递增搜索, 移动则取消高亮
+4. 目录树，符号表, 模糊搜索行，轻松看代码
+
+写代码:
+1. YCM自动补全
+2. snipmate代码片段
+3. XXX
+
+## 三. 使用说明
+
+1. 额外辅助工具安装
+
+centos系列 (ubuntu系列, 详见vim-env项目的Dockerfile)
+```bash
+yum install -y ctags ag ack rg
+```
+
+2. XXX
+
+### 在当前目录建立tags (c,cpp代码)
 ctags -R --c-kinds=+p --c++-kinds=+px --fields=+iaS --extra=+q --languages=c,c++ .
-
-# ctags参数参考查看
-ctags --list-kinds
