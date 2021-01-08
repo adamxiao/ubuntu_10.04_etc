@@ -1,14 +1,14 @@
 " 使用vim-plug管理vim插件
 " 定义插件目录
 "call plug#begin('~/.vim/plugged')
-call plug#begin('~/.vim/bundle')
+silent! call plug#begin('~/.vim/bundle')
 
 " colorscheme
 Plug 'altercation/vim-colors-solarized'
 Plug 'morhetz/gruvbox'
 " git plugins
 Plug 'zivyangll/git-blame.vim'
-Plug 'airblade/vim-gitgutter'
+"Plug 'airblade/vim-gitgutter'
 Plug 'vim-scripts/vcscommand.vim'
 " comment quickly
 Plug 'scrooloose/nerdcommenter'

@@ -14,7 +14,9 @@ tail -n+${ARCHIVE} "${0}" | tar xpJv -C ${DESTINATION}
 
 # Put your logic here (if you need)
 mkdir -p $HOME/.vim_swap
-# yum install -y ack ag, rg ctags ?
+# yum install -y ack ag, rg ctags git ?
+# ctags => tagbar
+# git => vim-gitgutter
 
 echo ""
 echo "Installation complete."
