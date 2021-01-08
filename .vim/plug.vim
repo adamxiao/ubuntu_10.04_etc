@@ -13,9 +13,9 @@ Plug 'vim-scripts/vcscommand.vim'
 " comment quickly
 Plug 'scrooloose/nerdcommenter'
 " tag plugin
-Plug 'majutsushi/tagbar'
+"Plug 'majutsushi/tagbar'
 " file(tag) fuzzy search
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 " code static analysis
 Plug 'dense-analysis/ale'

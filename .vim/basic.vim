@@ -32,7 +32,8 @@ set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P>
 set foldmethod=manual
 set diffopt=filler,vertical
 set display=lastline
-colorscheme desert
+set background=dark
+colorscheme gruvbox
 
 " file type detect
 au! BufRead,BufNewFile *.json set filetype=json
