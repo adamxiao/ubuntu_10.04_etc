@@ -41,11 +41,33 @@ vim-mark => 关键字高亮
 2. 把tab键展示成可见的符号, 拒绝tab,space混用缩进
 3. 高亮智能递增搜索, 移动则取消高亮
 4. 目录树，符号表, 模糊搜索行，轻松看代码
+5. 其他XXX
 
 写代码:
 1. YCM自动补全
 2. snipmate代码片段
 3. XXX
+let vim do typing?
+
+### 补全说明
+
+1. vim自带补全机制
+我就常用上下文补全
+<C-N> (<C-X><C-N>)
+<C-P> (<C-X><C-P>的简写)
+help 'complete'
+help ins-completion
+
+2. 更好的补全?基于语义的补全
+ycm补全(目前就用作c,c++系列补全,python也可)
+其他类型文件的补全呢, 待发掘使用
+
+由于新版ycm对vim和编译器有点要求，考虑使用其他补全工具也用用
+TODO: 补充ycm的使用配置方法, 通用泛型自动补全
+
+3. 代码跳转
+基于符号的跳转, 标记跳转
+<C-]>与<C-T> <C-O> 跳转
 
 ## 三. 使用说明
 
@@ -53,7 +75,11 @@ vim-mark => 关键字高亮
 
 centos系列 (ubuntu系列, 详见vim-env项目的Dockerfile)
 ```bash
-yum install -y ctags ag ack rg
+mkdir -p $HOME/.vim_swap
+yum install -y ctags \
+	cppcheck cpplint \
+	clang-format astyle \
+	ripgrep silversearcher-ag ack
 ```
 
 2. XXX
