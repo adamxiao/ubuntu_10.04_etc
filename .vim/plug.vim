@@ -22,6 +22,7 @@ Plug 'dense-analysis/ale'
 " complete plugin
 "Plug 'Valloric/YouCompleteMe'
 "Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " align plugin
 Plug 'junegunn/vim-easy-align'
 "Plug 'godlygeek/tabular'
@@ -46,6 +47,8 @@ Plug 'garbas/vim-snipmate' | Plug 'honza/vim-snippets'
 Plug 'Kris2k/matchit'
 " highlight keyword
 Plug 'dimasg/vim-mark'
+" auto pairs
+Plug 'jiangmiao/auto-pairs'
 
 " Initialize plugin system
 call plug#end()
