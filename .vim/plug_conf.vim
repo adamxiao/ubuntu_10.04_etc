@@ -1,3 +1,5 @@
+source ~/.vim/coc_conf.vim
+
 nmap <Leader>t :Files<CR>
 " file(tag) fuzzy search
 
