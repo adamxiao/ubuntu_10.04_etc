@@ -22,7 +22,7 @@ Plug 'dense-analysis/ale'
 " complete plugin
 "Plug 'Valloric/YouCompleteMe'
 "Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
-"Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " align plugin
 Plug 'junegunn/vim-easy-align'
 "Plug 'godlygeek/tabular'
