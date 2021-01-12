@@ -1,5 +1,10 @@
 #!/bin/bash
 
+## 1. first prepare plugins
+#vim -c 'PlugInstall|q'
+## 2. tar data
+##tar -cJf /tmp/data.bin .vim .fzf .tmux.conf .zshrc .oh-my-zsh README.md
+
 echo ""
 echo "Simple vimrc Installer"
 echo ""
@@ -16,7 +21,8 @@ tail -n+${ARCHIVE} "${0}" | tar xpJv -C $HOME
 
 # Put your logic here (if you need)
 mkdir -p $HOME/.vim_swap
-# yum install -y ack ag, rg ctags git ?
+bash $HOME/.fzf/install
+# yum install -y zsh tmux ack ag, rg ctags git ?
 # ctags => tagbar
 # git => vim-gitgutter
 
