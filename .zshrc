@@ -16,7 +16,7 @@ ZSH_THEME="ys"
 # HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
+DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
@@ -36,7 +36,7 @@ ZSH_THEME="ys"
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
 # much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
+DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
@@ -50,7 +50,7 @@ ZSH_THEME="ys"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git svn tmux)
+plugins=(git tmux)
 
 # User configuration
 
@@ -64,12 +64,12 @@ export LANG="en_US.UTF-8"
 export LANGUAGE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
-# Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
-else
-  export EDITOR='vim'
-fi
+## Preferred editor for local and remote sessions
+#if [[ -n $SSH_CONNECTION ]]; then
+  #export EDITOR='vim'
+#else
+  #export EDITOR='vim'
+#fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -83,23 +83,23 @@ fi
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases TODO: 放到单独的aliases目录中去
-alias ll='ls -l'
-alias la='ls -a'
-alias vi='vim'
-alias v='vim'
-alias ping='ping -c2'
-alias rz="rz -qye"
-alias sz="sz -qye"
+#alias ll='ls -l'
+#alias la='ls -a'
+#alias vi='vim'
+#alias v='vim'
+#alias ping='ping -c2'
+#alias rz="rz -qye"
+#alias sz="sz -qye"
 
-bindkey "^B" backward-word 
-bindkey "^G" forward-word 
-bindkey "^D" kill-word
+#bindkey "^B" backward-word 
+#bindkey "^G" forward-word 
+#bindkey "^D" kill-word
 # bindkey "^W" backward-kill-word
 
 # for autojump
 [[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && . ~/.autojump/etc/profile.d/autojump.sh
 
-export SVN_EDITOR=vim
+#export SVN_EDITOR=vim
 
 ## 加入/opt/*/bin目录下的软件
 #adam_local=`echo /opt/*/bin | sed 's/ /:/g'`
