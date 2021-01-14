@@ -1,3 +1,15 @@
+" .....................
+" scrooloose/nerdtree
+" .....................
+" refer https://github.com/nickjj/dotfiles/blob/6579639ceb4ae546355e93f94bde3c817ee4da15/.vimrc
+
+let g:NERDTreeShowHidden=1
+let g:NERDTreeAutoDeleteBuffer=1
+let g:NERDTreeQuitOnOpen=0
+
+" Open nerd tree at the current file or close nerd tree if pressed again.
+nnoremap <silent> <expr> <Leader>a g:NERDTree.IsOpen() ? "\:NERDTreeClose<CR>" : bufexists(expand('%')) ? "\:NERDTreeFind<CR>" : "\:NERDTree<CR>"
+
 nmap <Leader>t :Files<CR>
 " file(tag) fuzzy search
 

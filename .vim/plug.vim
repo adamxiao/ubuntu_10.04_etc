@@ -28,7 +28,7 @@ Plug 'junegunn/vim-easy-align'
 " async plugin
 Plug 'skywind3000/asyncrun.vim'
 " directory(file) tree
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'scrooloose/nerdtree'
 " status plugin
 Plug 'vim-airline/vim-airline'
 "" source header switch
@@ -46,6 +46,8 @@ Plug 'garbas/vim-snipmate' | Plug 'honza/vim-snippets'
 Plug 'Kris2k/matchit'
 " highlight keyword
 Plug 'dimasg/vim-mark'
+" Automatically clear search highlights after you move your cursor.
+"Plug 'haya14busa/is.vim'
 
 " Initialize plugin system
 call plug#end()
