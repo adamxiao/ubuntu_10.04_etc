@@ -10,6 +10,7 @@ Plug 'morhetz/gruvbox'
 Plug 'zivyangll/git-blame.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-scripts/vcscommand.vim'
+Plug 'tpope/vim-fugitive'
 " comment quickly
 Plug 'scrooloose/nerdcommenter'
 " tag plugin
@@ -48,6 +49,7 @@ Plug 'Kris2k/matchit'
 Plug 'dimasg/vim-mark'
 " Automatically clear search highlights after you move your cursor.
 "Plug 'haya14busa/is.vim'
+" edit helper
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 
