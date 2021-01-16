@@ -48,6 +48,7 @@ Plug 'Kris2k/matchit'
 Plug 'dimasg/vim-mark'
 " Automatically clear search highlights after you move your cursor.
 "Plug 'haya14busa/is.vim'
+Plug 'tpope/vim-surround'
 
 " Initialize plugin system
 call plug#end()
