@@ -30,6 +30,8 @@ Plug 'junegunn/vim-easy-align'
 Plug 'skywind3000/asyncrun.vim'
 " directory(file) tree
 Plug 'scrooloose/nerdtree'
+Plug 'PhilRunninger/nerdtree-visual-selection'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 " status plugin
 Plug 'vim-airline/vim-airline'
 "" source header switch
