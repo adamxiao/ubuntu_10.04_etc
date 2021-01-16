@@ -49,6 +49,7 @@ Plug 'dimasg/vim-mark'
 " Automatically clear search highlights after you move your cursor.
 "Plug 'haya14busa/is.vim'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
 
 " Initialize plugin system
 call plug#end()
