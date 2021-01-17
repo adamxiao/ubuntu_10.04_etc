@@ -18,6 +18,7 @@ Plug 'majutsushi/tagbar'
 " file(tag) fuzzy search
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'mhinz/vim-grepper'
 " code static analysis
 Plug 'dense-analysis/ale'
 " complete plugin
