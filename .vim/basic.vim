@@ -32,6 +32,7 @@ set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P>
 set foldmethod=manual
 set diffopt=filler,vertical
 set display=lastline
+set wildmenu " vim命令行补全菜单提示
 colorscheme desert
 set background=dark
 colorscheme gruvbox
