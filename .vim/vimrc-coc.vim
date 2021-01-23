@@ -1,15 +1,15 @@
-# adam coc vim plugin configuration
+" adam coc vim plugin configuration
 
-## refer ~/.vim/plug.vim
+" 插件管理
 source ~/.vim/plug.vim
 call plug#begin('~/.vim/bundle')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
-## refer ./plug_conf.vim
+" 插件配置
 source ~/.vim/coc_conf.vim
 source ~/.vim/plug_conf.vim
 
-## refer ~/.vim/basic.vim
+" 其他基本配置
 source ~/.vim/basic.vim
 
