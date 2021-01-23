@@ -53,6 +53,8 @@ map <F7> :cn<CR>
 nmap <F8> :TagbarToggle<CR>
 map <F12> :call Do_CsTag()<CR>
 map <F12><F12> :call Add_CsTag()<CR>
+" Clear search highlights.
+nmap <silent> <Leader><Space> :noh<CR>
 " basic key mapping
 
 vnoremap <silent> * y/<C-R>=substitute(escape(@", '^$~.*\\/[]'), "\n", '\\n', 'g')<CR><CR>
