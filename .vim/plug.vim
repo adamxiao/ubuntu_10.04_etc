@@ -10,6 +10,7 @@ Plug 'morhetz/gruvbox'
 Plug 'zivyangll/git-blame.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-scripts/vcscommand.vim'
+Plug 'tpope/vim-fugitive'
 " comment quickly
 Plug 'scrooloose/nerdcommenter'
 " tag plugin
@@ -17,6 +18,7 @@ Plug 'majutsushi/tagbar'
 " file(tag) fuzzy search
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'mhinz/vim-grepper'
 " code static analysis
 Plug 'dense-analysis/ale'
 " complete plugin
@@ -29,7 +31,9 @@ Plug 'junegunn/vim-easy-align'
 " async plugin
 Plug 'skywind3000/asyncrun.vim'
 " directory(file) tree
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'scrooloose/nerdtree'
+Plug 'PhilRunninger/nerdtree-visual-selection'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 " status plugin
 Plug 'vim-airline/vim-airline'
 "" source header switch
@@ -49,6 +53,11 @@ Plug 'Kris2k/matchit'
 Plug 'dimasg/vim-mark'
 " auto pairs
 Plug 'jiangmiao/auto-pairs'
+" Automatically clear search highlights after you move your cursor.
+"Plug 'haya14busa/is.vim'
+" edit helper
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
 
 " Initialize plugin system
 call plug#end()

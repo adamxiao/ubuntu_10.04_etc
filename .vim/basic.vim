@@ -32,6 +32,7 @@ set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P>
 set foldmethod=manual
 set diffopt=filler,vertical
 set display=lastline
+set wildmenu " vim命令行补全菜单提示
 colorscheme desert
 set background=dark
 colorscheme gruvbox
@@ -52,6 +53,8 @@ map <F7> :cn<CR>
 nmap <F8> :TagbarToggle<CR>
 map <F12> :call Do_CsTag()<CR>
 map <F12><F12> :call Add_CsTag()<CR>
+" Clear search highlights.
+nmap <silent> <Leader><Space> :noh<CR>
 " basic key mapping
 
 vnoremap <silent> * y/<C-R>=substitute(escape(@", '^$~.*\\/[]'), "\n", '\\n', 'g')<CR><CR>
