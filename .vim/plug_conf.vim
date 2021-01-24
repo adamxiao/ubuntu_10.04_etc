@@ -54,6 +54,7 @@ let g:alternateSearchPath = 'wdr:include,sfr:../src,sfr:../include,sfr:..'
 let g:snips_author = 'Adam Xiao'
 let g:snips_authorref = 'iefcu'
 let g:snips_email = 'iefcuxy@gmail.com'
+let g:snipMate = { 'snippet_version' : 1 }
 imap <C-J> <Plug>snipMateNextOrTrigger
 smap <C-J> <Plug>snipMateNextOrTrigger
 " snippet plugin
