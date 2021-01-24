@@ -20,7 +20,7 @@ tail -n+${ARCHIVE} "${0}" | tar xpJv -C $HOME
 # Put your logic here (if you need)
 ln -sf $HOME/.vim/vimrc-simple.vim $HOME/.vimrc
 mkdir -p $HOME/.vim_swap
-bash $HOME/.fzf/install
+bash $HOME/.fzf/install --all
 # yum install -y zsh tmux ack ag, rg ctags git ?
 # ctags => tagbar
 # git => vim-gitgutter
