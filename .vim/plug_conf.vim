@@ -86,3 +86,20 @@ let g:tagbar_type_go = {
     \ 'ctagsbin'  : 'gotags',  
     \ 'ctagsargs' : '-sort -silent'  
 \ }
+
+" refer https://github.com/jszakmeister/markdown2ctags
+" Add support for markdown files in tagbar.
+let g:tagbar_type_markdown = {
+    \ 'ctagstype': 'markdown',
+    \ 'ctagsbin' : 'markdown2ctags.py',
+    \ 'ctagsargs' : '-f - --sort=yes --sro=»',
+    \ 'kinds' : [
+        \ 's:sections',
+        \ 'i:images'
+    \ ],
+    \ 'sro' : '»',
+    \ 'kind2scope' : {
+        \ 's' : 'section',
+    \ },
+    \ 'sort': 0,
+\ }
