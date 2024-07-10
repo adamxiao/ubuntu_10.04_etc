@@ -1,5 +1,5 @@
-# Ignore everything in this directory
-/*
+## Ignore everything in this directory
+#/*
 # Ignore special backup file
 *~
 *-
@@ -7,8 +7,8 @@
 /.vim/.netrwhist
 /.vim/*tags
 /.vim/bundle/
-# Except this file
-# git config
-!.gitignore
-# vim config
-!.vim/
+## Except this file
+## git config
+#!.gitignore
+## vim config
+#!.vim/
