@@ -47,7 +47,7 @@ Plug 'jlanzarotta/bufexplorer'
 Plug 'mbbill/fencview'
 "" code snippets
 Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'tomtom/tlib_vim'
+"Plug 'tomtom/tlib_vim'
 Plug 'garbas/vim-snipmate' | Plug 'honza/vim-snippets'
 "Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 " match %

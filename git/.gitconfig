@@ -1,0 +1,26 @@
+[user]
+    name = Adam Xiao
+    email = iefcuxy@gmail.com
+[alias]
+    #st = !git status -s
+    #co = !git checkout
+    #ci = !git commit
+    #di = !git difftool -t vimdiff
+    st = status -s --ignore-submodules
+    co = checkout
+    ci = commit
+    di = difftool -t vimdiff --ignore-submodules
+    dif = diff --ignore-submodules
+[https]
+    #proxy = http://proxy.iefcu.cn:20172
+[http]
+    #proxy = http://proxy.iefcu.cn:20172
+[push]
+    default = simple
+[i18n]
+    commitencoding = utf-8
+    logoutputencoding = utf-8
+[core]
+    quotepath = false
+[pull]
+    ff = only
