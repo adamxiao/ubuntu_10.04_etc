@@ -11,6 +11,8 @@
     ci = commit
     di = difftool -t vimdiff --ignore-submodules
     dif = diff --ignore-submodules
+    lg = log --name-status
+	cim = commit --amend --reset-author --date=now
 [https]
     #proxy = http://proxy.iefcu.cn:20172
 [http]
@@ -24,3 +26,5 @@
     quotepath = false
 [pull]
     ff = only
+[safe]
+	directory = *
