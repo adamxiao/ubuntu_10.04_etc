@@ -55,6 +55,7 @@ Plug 'dimasg/vim-mark'
 " edit helper
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-unimpaired'
 
 " Initialize plugin system
 call plug#end()
