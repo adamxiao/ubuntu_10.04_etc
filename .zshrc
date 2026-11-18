@@ -108,3 +108,12 @@ export SVN_EDITOR=vim
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export PATH="$HOME/.npm-global/bin:$PATH"
+
+# 向 tmux 同步逻辑 PWD（与 pwd 一致，保留 symlink）
+_tmux_sync_logical_path() {
+  [[ -n "$TMUX" ]] || return 0
+  tmux set-option -p @logical_path "$PWD" 2>/dev/null
+}
+autoload -Uz add-zsh-hook
+add-zsh-hook chpwd _tmux_sync_logical_path
+_tmux_sync_logical_path
